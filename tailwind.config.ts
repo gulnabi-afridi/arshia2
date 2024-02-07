@@ -29,7 +29,7 @@ const config: Config = {
         black: {
           1: '#000000',
           2: '#1D1F2C',
-          3: '#3B3A3A',
+          3: '#4A4C56',
         },
         blue: {
           1: '#15B1FE',
