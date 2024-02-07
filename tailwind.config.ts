@@ -28,11 +28,12 @@ const config: Config = {
       colors: {
         black: {
           1: '#000000',
-          2: '#1A1A1A',
+          2: '#1D1F2C',
           3: '#3B3A3A',
         },
-        purple: {
-          1: '#534599',
+        blue: {
+          1: '#15B1FE',
+          2: '#BFEAFF',
         },
         white: {
           1: '#FFF',
