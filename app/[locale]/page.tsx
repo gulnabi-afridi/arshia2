@@ -5,6 +5,7 @@ import Navibar from './component/Shared/Navibar';
 import Footer from './component/Shared/Footer';
 import Hero from './component/LandingPage/Hero';
 import VerifiedReviews from './component/LandingPage/VerifiedReviews';
+import ImportReviews from './component/LandingPage/ImportReviews';
 
 interface HomeProps {
   params: {
@@ -27,6 +28,7 @@ export default async function Home({ params: { locale } }: HomeProps) {
         <Navibar />
         <Hero />
         <VerifiedReviews />
+        <ImportReviews />
         {/* <Footer /> */}
       </main>
     </TranslationsProvider>
