@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const ServicesOffer: React.FC = () => {
   return (
-    <div className=' w-full py-10 bg-white-1'>
+    <div className='w-full py-10 bg-white-1'>
       <Wrapper>
         <div className='flex flex-col gap-4 w-full justify-center items-center'>
           <p className='text-[40px] text-black-1 font-semibold'>

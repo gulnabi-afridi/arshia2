@@ -7,6 +7,7 @@ import Hero from './component/LandingPage/Hero';
 import VerifiedReviews from './component/LandingPage/VerifiedReviews';
 import ImportReviews from './component/LandingPage/ImportReviews';
 import ServicesOffer from './component/LandingPage/ServicesOffer';
+import InNutShell from './component/LandingPage/InNutShell';
 
 interface HomeProps {
   params: {
@@ -31,6 +32,7 @@ export default async function Home({ params: { locale } }: HomeProps) {
         <VerifiedReviews />
         <ImportReviews />
         <ServicesOffer />
+        <InNutShell />
         {/* <Footer /> */}
       </main>
     </TranslationsProvider>
