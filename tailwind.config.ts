@@ -13,6 +13,9 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        rockSalt: ['Rock Salt', 'cursive'],
+      },
       screens: {
         xs: '325px',
         xsm: '370px',

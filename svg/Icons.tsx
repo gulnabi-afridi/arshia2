@@ -45,7 +45,7 @@ export const headerShape: React.FC<Props> = ({
 );
 
 export const rightArrow: React.FC<Props> = ({
-  fill = 'none',
+  fill = '#FFFFFF',
   stroke = '',
   className = 'w-[25px] h-[24px]',
 }: Props) => (
@@ -57,7 +57,39 @@ export const rightArrow: React.FC<Props> = ({
   >
     <path
       d='M20.5 12L21.0303 11.4697L21.5607 12L21.0303 12.5303L20.5 12ZM5.5 12.75C5.08579 12.75 4.75 12.4142 4.75 12C4.75 11.5858 5.08579 11.25 5.5 11.25V12.75ZM15.0303 5.46967L21.0303 11.4697L19.9697 12.5303L13.9697 6.53033L15.0303 5.46967ZM21.0303 12.5303L15.0303 18.5303L13.9697 17.4697L19.9697 11.4697L21.0303 12.5303ZM20.5 12.75H5.5V11.25H20.5V12.75Z'
-      fill='white'
+      fill={fill}
     />
+  </svg>
+);
+
+export const checkIcon: React.FC<Props> = ({
+  fill = 'none',
+  stroke = '',
+  className = 'w-[44px] h-[55px]',
+}: Props) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+    viewBox='0 0 44 55'
+    fill={fill}
+    stroke={stroke}
+  >
+    <g clip-path='url(#clip0_4327_242)'>
+      <path
+        d='M19.5 55C30.2696 55 39 46.2696 39 35.5C39 24.7304 30.2696 16 19.5 16C8.73045 16 0 24.7304 0 35.5C0 46.2696 8.73045 55 19.5 55Z'
+        fill='#E6EDFB'
+      />
+      <path
+        d='M13 27.6014C13.3313 32.2393 13.8795 37.2543 16.1557 41.3799C18.0777 44.8635 18.0672 45.4473 20.6004 42.0021C29.223 30.2754 37.1875 15.842 41.8015 2'
+        stroke='#0B70D6'
+        stroke-width='4'
+        stroke-linecap='round'
+      />
+    </g>
+    <defs>
+      <clipPath id='clip0_4327_242'>
+        <rect width='44' height='55' fill='white' />
+      </clipPath>
+    </defs>
   </svg>
 );
