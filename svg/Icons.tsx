@@ -96,7 +96,7 @@ export const checkIcon: React.FC<Props> = ({
 
 export const bulb: React.FC<Props> = ({
   fill = 'none',
-  stroke = '',
+  stroke = '#15B1FE',
   className = 'w-[24px] h-[25px]',
 }: Props) => (
   <svg
@@ -104,11 +104,10 @@ export const bulb: React.FC<Props> = ({
     className={className}
     viewBox='0 0 24 25'
     fill={fill}
-    stroke={stroke}
   >
     <path
       d='M14.5 20H9.5M14.5 20C14.5 19.2865 14.5 18.9297 14.5381 18.693C14.6609 17.9296 14.6824 17.8815 15.1692 17.2807C15.3201 17.0945 15.8805 16.5927 17.0012 15.5892C18.5349 14.2159 19.5 12.2206 19.5 10C19.5 5.85786 16.1421 2.5 12 2.5C7.85786 2.5 4.5 5.85786 4.5 10C4.5 12.2206 5.4651 14.2159 6.99876 15.5892C8.11945 16.5927 8.67987 17.0945 8.83082 17.2807C9.31762 17.8815 9.3391 17.9296 9.46192 18.693C9.5 18.9297 9.5 19.2865 9.5 20M14.5 20C14.5 20.9346 14.5 21.4019 14.299 21.75C14.1674 21.978 13.978 22.1674 13.75 22.299C13.4019 22.5 12.9346 22.5 12 22.5C11.0654 22.5 10.5981 22.5 10.25 22.299C10.022 22.1674 9.83261 21.978 9.70096 21.75C9.5 21.4019 9.5 20.9346 9.5 20'
-      stroke='#15B1FE'
+      stroke={stroke}
       stroke-width='1.5'
     />
   </svg>
@@ -359,5 +358,25 @@ export const google: React.FC<Props> = ({
         fill='white'
       />
     </g>
+  </svg>
+);
+export const underline: React.FC<Props> = ({
+  fill = 'none',
+  stroke = '',
+  className = 'w-[234px] h-[22px]',
+}: Props) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+    viewBox='0 0 234 22'
+    fill={fill}
+    stroke={stroke}
+  >
+    <path
+      d='M2.69629 19.9648C8.03604 14.9217 18.374 12.4519 25.1993 11.1879C66.1989 3.59542 109.13 1.87662 150.714 2.18015C172.207 2.33703 193.745 3.33881 214.957 6.83253C220.57 7.75709 226.281 7.49244 231.95 7.49244'
+      stroke='#15B1FE'
+      stroke-width='4'
+      stroke-linecap='round'
+    />
   </svg>
 );
