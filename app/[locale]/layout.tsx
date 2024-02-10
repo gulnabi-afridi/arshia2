@@ -3,6 +3,7 @@ import { Noto_Sans } from 'next/font/google';
 import './globals.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Navibar from './component/Shared/Navibar';
 
 const notoSans = Noto_Sans({ subsets: ['latin'] });
 
@@ -18,7 +19,10 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={notoSans.className}>{children}</body>
+      <body className={notoSans.className}>
+        <Navibar />
+        {children}
+      </body>
     </html>
   );
 }

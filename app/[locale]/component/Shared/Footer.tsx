@@ -5,7 +5,7 @@ import * as Icons from '../../../../svg/Icons';
 
 const Footer: React.FC = () => {
   return (
-    <div className='w-full bg-blue-2 pt-24 relative mt-[350px]'>
+    <div className='w-full bg-blue-2 pt-24 relative mt-[70px]'>
       <Wrapper>
         <div className='w-full grid grid-cols-1 csm:grid-cols-3 md:grid-cols-4 gap-y-5 sm:gap-y-8 lg:grid-cols-5 pb-8'>
           {/*  */}
@@ -39,7 +39,9 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </Wrapper>
-      <Icons.footerShape className='w-full h-[450px] absolute -top-[250px] csm:-top-[290px] md:-top-[300px] clg:-top-[350px]' />
+      <div className='w-full md:block hidden absolute -z-10 -top-[250px] csm:-top-[290px] md:-top-[300px] clg:-top-[350px]'>
+        <Icons.footerShape className=' w-full h-[450px]' />
+      </div>
     </div>
   );
 };
