@@ -51,7 +51,7 @@ const ImportReviews: React.FC = () => {
                 triggerOnce
                 className='w-full flex justify-center items-center'
               >
-                <div className='w-full max-w-[580px] md:gap-0 gap-3 md:max-w-[880px] p-3 sm:p-5 lg:p-6 flex md:flex-row flex-col justify-between items-start csm:items-center rounded-[15px] bg-[#D0D8FF]'>
+                <div className='w-full max-w-[580px] md:gap-0 gap-1 md:max-w-[880px] p-3 sm:p-5 lg:p-6 flex md:flex-row flex-col justify-between items-start csm:items-center rounded-[15px] bg-[#D0D8FF]'>
                   {/* left portion --->  */}
                   <div className='flex gap-3 justify-center items-start'>
                     <Fade triggerOnce>
@@ -99,7 +99,7 @@ const ImportReviews: React.FC = () => {
                     </Fade>
                   </div>
                   {/* import button ----> */}
-                  <Zoom triggerOnce className='w-full'>
+                  <Zoom triggerOnce className='w-full csm:w-auto'>
                     <div className='w-full flex justify-center items-center gap-2'>
                       <button className='flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'>
                         <Icons.star className='w-[16px] csm:w-[19px] h-[16px] csm:h-[18px]' />

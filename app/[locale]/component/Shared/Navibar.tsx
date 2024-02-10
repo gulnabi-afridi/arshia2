@@ -10,11 +10,13 @@ import 'react-modern-drawer/dist/index.css';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { RxCross1 } from 'react-icons/rx';
 import { Slide } from 'react-awesome-reveal';
+import OutSideClick from '@/app/hooks/OutSideClick';
 
 const Navibar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [showItSolveDrawer, setShowItSolveDrawer] = useState(false);
 
   const toggleDrawer = () => {
@@ -106,13 +108,38 @@ const Navibar = () => {
                 <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
               </Link>
               {/* change language --->  */}
-              <Link
-                href='#'
-                className='flex justify-center px-3 py-3 rounded-[10px] hover:bg-blue-1/90 bg-transparent items-center gap-0 hover:opacity-80'
+              <OutSideClick
+                Event={() => {
+                  setShowLanguageMenu(false);
+                }}
+                style='relative bottom-0'
               >
-                <p className='text-[18px] font-semibold text-black-2'>en</p>
-                <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
-              </Link>
+                <Link
+                  onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                  href='#'
+                  className='flex justify-center px-3 py-3 rounded-[10px] hover:bg-blue-1/90 bg-transparent items-center gap-0 hover:opacity-80'
+                >
+                  <p className='text-[18px] font-semibold text-black-2'>en</p>
+                  <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
+                </Link>
+                {/* drawer for toggle language ---->  */}
+                {showLanguageMenu && (
+                  <div className='w-[150px] flex bg-white-1 rounded-lg -bottom-[78px] -right-[40px] flex-col shadow-xl absolute'>
+                    <button
+                      onClick={() => setShowLanguageMenu(false)}
+                      className='text-[16px] h-[35px] w-full hover:bg-black-1/5 rounded-t-xl text-black-1 font-medium'
+                    >
+                      English
+                    </button>
+                    <button
+                      onClick={() => setShowLanguageMenu(false)}
+                      className='text-[16px] h-[35px] w-full hover:bg-black-1/5 rounded-b-xl text-black-1 font-medium'
+                    >
+                      French
+                    </button>
+                  </div>
+                )}
+              </OutSideClick>
             </div>
             {/* signUp + signIn links -----> */}
             <div className='hidden lg:flex justify-center items-center gap-3'>
