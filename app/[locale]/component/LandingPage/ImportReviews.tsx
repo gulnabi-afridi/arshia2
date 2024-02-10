@@ -99,8 +99,8 @@ const ImportReviews: React.FC = () => {
                     </Fade>
                   </div>
                   {/* import button ----> */}
-                  <Zoom triggerOnce>
-                    <div className='flex justify-center items-center gap-2'>
+                  <Zoom triggerOnce className='w-full'>
+                    <div className='w-full flex justify-center items-center gap-2'>
                       <button className='flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'>
                         <Icons.star className='w-[16px] csm:w-[19px] h-[16px] csm:h-[18px]' />
                         <p className='text-white-1 text-[12px] csm:text-[16px] lg:text-[18px] font-medium'>

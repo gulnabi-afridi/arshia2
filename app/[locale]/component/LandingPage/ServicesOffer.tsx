@@ -9,7 +9,7 @@ import { Fade, Slide, Zoom } from 'react-awesome-reveal';
 
 const ServicesOffer: React.FC = () => {
   return (
-    <div className='w-full py-10 bg-white-1'>
+    <div className='w-full pb-0 pt-10 csm:pb-10 bg-white-1'>
       <Wrapper>
         <div className='flex flex-col gap-0 lg:gap-4 w-full justify-center items-center'>
           <Fade cascade triggerOnce>
@@ -54,12 +54,12 @@ const ServicesOffer: React.FC = () => {
           </Slide>
           {/* image ---->  */}
           <Zoom triggerOnce className='w-full flex justify-center items-center'>
-            <div className='w-full max-w-[1050px] h-[300px] sm:h-[500px] cmd:h-[600px] lg:h-[650px] relative'>
+            <div className='w-full max-w-[400px] csm:max-w-[1050px] h-[250px] sm:h-[500px] cmd:h-[600px] lg:h-[650px] relative'>
               <Image
                 src='/assets/servicesOffer.svg'
                 fill
                 alt=''
-                className='object-fill'
+                className='object-fill rounded-lg'
               />
             </div>
           </Zoom>

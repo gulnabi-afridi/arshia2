@@ -9,7 +9,7 @@ import { Fade, Slide, Zoom } from 'react-awesome-reveal';
 
 const InNutShell: React.FC = () => {
   return (
-    <div className='w-full py-10 bg-white-1'>
+    <div className='w-full pt-10 pb-0 csm:pb-10 bg-white-1'>
       <Wrapper>
         <div className='flex flex-col gap-6'>
           <Fade duration={1000} triggerOnce>

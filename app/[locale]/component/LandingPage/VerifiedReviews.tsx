@@ -12,7 +12,7 @@ const VerifiedReviews: React.FC = () => {
     <Fade duration={1200} triggerOnce>
       {' '}
       {/* General fade effect for the container */}
-      <div className='bg-white-1 lg:py-0 py-10'>
+      <div className='bg-white-1 lg:py-0 pt-10'>
         <Wrapper>
           <div className='w-full grid grid-cols-1 sm:gap-0 gap-4 lg:grid-cols-2 justify-center items-center'>
             {/* Left portion with slide effect */}
@@ -46,11 +46,11 @@ const VerifiedReviews: React.FC = () => {
             </Slide>
             {/* Right portion with slide effect */}
             <Zoom triggerOnce delay={500}>
-              <div className='w-full h-[300px] sm:h-[400px] md:h-[500px] clg:h-[600px] relative'>
+              <div className='w-full h-[350px] sm:h-[400px] md:h-[500px] clg:h-[600px] relative'>
                 <Image
                   src='/assets/verified.svg'
                   alt=''
-                  className='object-fill'
+                  className='object-cover csm:object-fill'
                   fill
                 />
               </div>

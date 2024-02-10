@@ -8,7 +8,7 @@ import { Fade, Slide } from 'react-awesome-reveal';
 
 const Footer: React.FC = () => {
   return (
-    <div className='w-full bg-blue-2 pt-24 relative mt-[70px]'>
+    <div className='w-full bg-blue-2 pt-10 csm:pt-24 relative mt-[70px]'>
       <Wrapper>
         <Fade duration={500} triggerOnce>
           <div className='w-full grid grid-cols-1 csm:grid-cols-3 md:grid-cols-4 gap-y-5 sm:gap-y-8 lg:grid-cols-5 pb-8'>

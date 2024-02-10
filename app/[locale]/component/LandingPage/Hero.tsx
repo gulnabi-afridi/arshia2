@@ -55,7 +55,7 @@ const Hero = () => {
           </Fade>
           {/* Call to action input animation */}
           <Slide direction='up' triggerOnce className='w-full'>
-            <div className='w-full flex justify-center mt-5 items-center h-[45px] sm:h-[50px]'>
+            <div className='w-full flex justify-center mt-5 items-center h-[50px] sm:h-[50px]'>
               <input
                 placeholder='Fill in our e-mail here to start your journey...'
                 type='text'
