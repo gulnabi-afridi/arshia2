@@ -24,23 +24,37 @@ const InNutShell: React.FC = () => {
           </Fade>
           {/* nutShell cards ---->  */}
 
-          <Zoom>
+          <Zoom triggerOnce>
             <div className='w-full grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
               {/* two cols -->  */}
               <div className='w-full col-span-1 md:col-span-2 lg:col-span-3 gap-5 grid grid-cols-1 md:grid-cols-2'>
                 <Slide direction='up' delay={50} triggerOnce className='w-full'>
                   <div className='w-full flex justify-center items-center'>
-                    <Link
-                      href='#'
-                      className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[250px] sm:h-[300px] lg:h-[440px] relative'
-                    >
+                    <div className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[250px] sm:h-[300px] lg:h-[440px] relative overflow-hidden group'>
                       <Image
-                        src='assets/nutShell1.svg'
-                        alt=''
-                        fill
-                        className='object-cover rounded-xl'
+                        src='/assets/nutShell1.svg'
+                        alt='Descriptive Text for Image'
+                        layout='fill'
+                        className='object-cover rounded-xl transition duration-500 ease-in-out transform group-hover:scale-110'
                       />
-                    </Link>
+                      {/* Overlay appears on hover */}
+                      <div className='absolute inset-0 flex justify-center items-center bg-black-1/70 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out'>
+                        {/* Background for text to ensure readability */}
+                        <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
+                          <p className='mb-4 text-white-1 text-[20px] font-normal'>
+                            When an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries.
+                          </p>
+                          <Link
+                            href=''
+                            className='inline-block text-white-1 bg-blue-1 mt-2 text-black font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
+                          >
+                            Click Here
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </Slide>
                 <Slide
@@ -50,35 +64,58 @@ const InNutShell: React.FC = () => {
                   className='w-full'
                 >
                   <div className='w-full flex justify-center items-center'>
-                    <Link
-                      href='#'
-                      className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[250px] sm:h-[300px] lg:h-[440px] relative'
-                    >
+                    <div className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[250px] sm:h-[300px] lg:h-[440px] relative overflow-hidden group'>
                       <Image
-                        src='assets/nutShell2.svg'
-                        alt=''
-                        fill
-                        className='object-cover rounded-xl'
+                        src='/assets/nutShell2.svg'
+                        alt='Descriptive Text for Image'
+                        layout='fill'
+                        className='object-cover rounded-xl transition duration-500 ease-in-out transform group-hover:scale-110'
                       />
-                    </Link>
+                      {/* Overlay appears on hover */}
+                      <div className='absolute inset-0 flex justify-center items-center bg-black-1/70 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out'>
+                        {/* Background for text to ensure readability */}
+                        <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
+                          <p className='mb-4 text-white-1 text-[20px] font-normal'>
+                            When an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries.
+                          </p>
+                          <Link
+                            href=''
+                            className='inline-block text-white-1 bg-blue-1 mt-2 font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
+                          >
+                            Click Here
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </Slide>
               </div>
 
               {/* three cols --> */}
               <Slide direction='up' delay={150} triggerOnce className='w-full'>
-                <div className='w-full flex justify-center items-center'>
-                  <Link
-                    href='#'
-                    className='w-full max-w-[400px] md:max-w-full rounded-xl h-[250px] sm:h-[300px] clg:h-[400px] relative shadow-lg'
-                  >
+                <div className='w-full flex justify-center items-center relative rounded-xl overflow-hidden group'>
+                  <div className='w-full max-w-[400px] md:max-w-full rounded-xl h-[250px] sm:h-[300px] clg:h-[400px] shadow-lg'>
                     <Image
                       src='/assets/nutShell3.svg'
                       alt=''
                       fill
-                      className='object-cover rounded-xl'
+                      className='object-cover rounded-xl transition duration-500 ease-in-out transform group-hover:scale-110'
                     />
-                  </Link>
+                  </div>
+                  {/* Overlay appears on hover */}
+                  <div className='absolute inset-0 rounded-xl flex justify-center items-center bg-black-1/70 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out'>
+                    {/* Background for text to ensure readability */}
+                    <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
+                      <Link
+                        href=''
+                        className='inline-block text-white-1 bg-blue-1 mt-2 text-black font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
+                      >
+                        Click Here
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </Slide>
               <Slide direction='up' delay={200} triggerOnce className='w-full'>
@@ -97,21 +134,27 @@ const InNutShell: React.FC = () => {
                 </div>
               </Slide>
               <Slide direction='up' delay={250} triggerOnce className='w-full'>
-                <div className='w-full flex justify-center items-center'>
-                  <Link
-                    href='#'
-                    className="w-full max-w-[400px] md:max-w-full rounded-xl h-[250px] sm:h-[300px] clg:h-[400px] relative shadow-lg bg-cover bg-center bg-no-repeat bg-[url('/assets/nutShell5.svg')]"
-                  >
-                    <div className='w-full flex justify-between items-center p-4'>
-                      <p className='text-black-1 text-[20px] sm:text-[24px] font-semibold'>
-                        Try itsolve
-                      </p>
-                      <Icons.rightArrow
-                        className='w-[26px] sm:w-[32px] h-[26px] sm:h-[32px]'
-                        fill='#1D1F2C'
-                      />
+                <div className='w-full flex justify-center items-center relative rounded-xl overflow-hidden group'>
+                  <div className='w-full max-w-[400px] md:max-w-full rounded-xl h-[250px] sm:h-[300px] clg:h-[400px] shadow-lg'>
+                    <Image
+                      src='/assets/nutShell5.svg'
+                      alt=''
+                      fill
+                      className='object-cover rounded-xl transition duration-500 ease-in-out transform group-hover:scale-110'
+                    />
+                  </div>
+                  {/* Overlay appears on hover */}
+                  <div className='absolute inset-0 rounded-xl flex justify-center items-center bg-black-1/70 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out'>
+                    {/* Background for text to ensure readability */}
+                    <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
+                      <Link
+                        href=''
+                        className='inline-block text-white-1 bg-blue-1 mt-2 text-black font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
+                      >
+                        Click Here
+                      </Link>
                     </div>
-                  </Link>
+                  </div>
                 </div>
               </Slide>
             </div>

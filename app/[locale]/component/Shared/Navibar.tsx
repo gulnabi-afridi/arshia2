@@ -9,6 +9,7 @@ import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { RxCross1 } from 'react-icons/rx';
+import { Slide } from 'react-awesome-reveal';
 
 const Navibar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -212,13 +213,15 @@ const Navibar = () => {
         <div className='h-[80%] w-full flex flex-col justify-center items-center gap-4 bg-black-1'>
           {itSolveDrawerLinks.map((item, index) => {
             return (
-              <Link
-                key={index}
-                href={item.path}
-                className='text-[32px] capitalize text-white-1 font-semibold relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[3px] after:bg-white-1 hover:after:w-full after:duration-200'
-              >
-                {item.name}
-              </Link>
+              <Slide key={index} direction='down' delay={100 * index}>
+                <Link
+                  key={index}
+                  href={item.path}
+                  className='text-[32px] capitalize text-white-1 font-semibold relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[3px] after:bg-white-1 hover:after:w-full after:duration-200'
+                >
+                  {item.name}
+                </Link>
+              </Slide>
             );
           })}
         </div>
