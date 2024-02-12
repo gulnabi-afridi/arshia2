@@ -8,6 +8,7 @@ import ImportReviews from './component/LandingPage/ImportReviews';
 import ServicesOffer from './component/LandingPage/ServicesOffer';
 import InNutShell from './component/LandingPage/InNutShell';
 import OurCommunity from './component/LandingPage/OurCommunity';
+import Navibar from './component/Shared/Navibar';
 
 interface HomeProps {
   params: {
@@ -27,7 +28,7 @@ export default async function Home({ params: { locale } }: HomeProps) {
       resources={resources}
     >
       <main>
-        {/* <Navibar /> */}
+        <Navibar />
         <Hero />
         <VerifiedReviews />
         <ImportReviews />

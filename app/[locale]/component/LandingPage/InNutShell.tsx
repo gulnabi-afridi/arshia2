@@ -6,8 +6,11 @@ import * as Icons from '../../../../svg/Icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
+import { useTranslation } from 'react-i18next';
 
 const InNutShell: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='w-full pt-10 pb-0 csm:pb-10 bg-white-1'>
       <Wrapper>
@@ -15,7 +18,7 @@ const InNutShell: React.FC = () => {
           <Fade duration={1000} triggerOnce>
             <div className='flex justify-center items-center gap-2'>
               <p className='text-black-2 text-[20px] sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] font-semibold'>
-                itsolve in a nutshell
+                {t('nut_shell_title')}
               </p>
               <Zoom duration={1000} triggerOnce>
                 <Icons.eye className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
@@ -42,15 +45,13 @@ const InNutShell: React.FC = () => {
                         {/* Background for text to ensure readability */}
                         <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
                           <p className='mb-4 text-white-1 text-[20px] font-normal'>
-                            When an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries.
+                            {t('dummy_text')}
                           </p>
                           <Link
                             href=''
                             className='inline-block text-white-1 bg-blue-1 mt-2 text-black font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
                           >
-                            Click Here
+                            {t('click_here')}
                           </Link>
                         </div>
                       </div>
@@ -76,15 +77,13 @@ const InNutShell: React.FC = () => {
                         {/* Background for text to ensure readability */}
                         <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
                           <p className='mb-4 text-white-1 text-[20px] font-normal'>
-                            When an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries.
+                            {t('dummy_text')}
                           </p>
                           <Link
                             href=''
                             className='inline-block text-white-1 bg-blue-1 mt-2 font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
                           >
-                            Click Here
+                            {t('click_here')}
                           </Link>
                         </div>
                       </div>
@@ -112,7 +111,7 @@ const InNutShell: React.FC = () => {
                         href=''
                         className='inline-block text-white-1 bg-blue-1 mt-2 text-black font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
                       >
-                        Click Here
+                        {t('comming_soon')}
                       </Link>
                     </div>
                   </div>
@@ -126,7 +125,7 @@ const InNutShell: React.FC = () => {
                   >
                     <div className='flex h-full justify-center items-center gap-3'>
                       <p className='text-[20px] sm:text-[30px] text-black-1 font-semibold'>
-                        Coming soon...
+                        {t('comming_soon')}
                       </p>
                       <Icons.eye className='w-[30px] sm:w-[35px] h-[30px] sm:h-[35px]' />
                     </div>

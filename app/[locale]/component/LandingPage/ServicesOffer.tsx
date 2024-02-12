@@ -5,24 +5,27 @@ import Wrapper from '../Shared/ComponentWrapper';
 import * as Icons from '../../../../svg/Icons';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
 
 const ServicesOffer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='w-full pb-0 pt-10 csm:pb-10 bg-white-1'>
       <Wrapper>
         <div className='flex flex-col gap-0 lg:gap-4 w-full justify-center items-center'>
           <Fade cascade triggerOnce>
             <p className='text-[20px] sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] text-black-1 font-semibold'>
-              Offer your services that{' '}
+              {t('offer_title')}{' '}
               <span className='uppercase text-[12px] sm:text-[20px] csm:text-[25px] md:text-[30px] lg:text-[35px] text-[#15B1FE] font-rockSalt relative'>
-                CONVERT
+                {t('convert')}
+
                 <Icons.underline className='w-[70px] sm:w-[130px] csm:w-[180px] md:w-[300px] h-[18px] absolute right-0 csm:-right-4 lg:-right-10 -bottom-1 csm:bottom-0' />
               </span>
             </p>
-            <p className='text-[18px] md:text-[20px] max-w-[550px] w-full text-center mt-3 md:mt-0 lg:mt-1 text-black-3 font-normal'>
-              Our advanced import module simplifies the processof importing
-              reviews from other platforms, saving you time and hassle.
+            <p className='text-[18px] md:text-[20px] max-w-[1050px] w-full text-center mt-3 md:mt-0 lg:mt-1 text-black-3 font-normal'>
+              {t('offer_sub_title')}
             </p>
           </Fade>
           {/* how its work link --->  */}
@@ -32,7 +35,8 @@ const ServicesOffer: React.FC = () => {
                 className='text-[#0B70D6] hover:opacity-80 text-[18px] csm:text-[20px] md:text-[24px] font-semibold flex justify-center items-center gap-2'
                 href='#'
               >
-                Try it now
+                {t('try_it_now')}
+
                 <Icons.rightArrow
                   className='w-[24px] h-[24px]'
                   fill='#33363F'
@@ -43,7 +47,7 @@ const ServicesOffer: React.FC = () => {
                 className='hover:opacity-80 flex justify-center items-center gap-2'
               >
                 <p className='text-[18px] csm:text-[20px] md:text-[24px] font-medium text-[#0B70D6]'>
-                  How it work
+                  {t('how_it_work')}
                 </p>
                 <Icons.bulb
                   className='w-[22px] md:w-[24px] h-[22px] md:h-[25px]'

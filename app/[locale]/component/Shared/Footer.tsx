@@ -5,8 +5,110 @@ import Wrapper from './ComponentWrapper';
 import Link from 'next/link';
 import * as Icons from '../../../../svg/Icons';
 import { Fade, Slide } from 'react-awesome-reveal';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
+  const footerData = [
+    {
+      category: t('f_c1'),
+      links: [
+        {
+          path: '#',
+          name: t('f_c1_l1'),
+        },
+        {
+          path: '#',
+          name: t('f_c1_l2'),
+        },
+        {
+          path: '#',
+          name: t('f_c1_l3'),
+        },
+        {
+          path: '#',
+          name: t('f_c1_l4'),
+        },
+        {
+          path: '#',
+          name: t('f_c1_l5'),
+        },
+      ],
+    },
+    {
+      category: t('f_c2'),
+      links: [
+        {
+          path: '#',
+          name: t('f_c2_l1'),
+        },
+        {
+          path: '#',
+          name: t('f_c2_l2'),
+        },
+        {
+          path: '#',
+          name: t('f_c2_l3'),
+        },
+        {
+          path: '#',
+          name: t('f_c2_l4'),
+        },
+      ],
+    },
+    {
+      category: t('f_c3'),
+      links: [
+        {
+          path: '#',
+          name: t('f_c3_l1'),
+        },
+        {
+          path: '#',
+          name: t('f_c3_l2'),
+        },
+        {
+          path: '#',
+          name: t('f_c3_l3'),
+        },
+        {
+          path: '#',
+          name: t('f_c3_l4'),
+        },
+      ],
+    },
+    {
+      category: t('f_c4'),
+      links: [
+        {
+          path: '#',
+          name: t('f_c4_l1'),
+        },
+        {
+          path: '#',
+          name: t('f_c4_l2'),
+        },
+        {
+          path: '#',
+          name: t('f_c4_l3'),
+        },
+        {
+          path: '#',
+          name: t('f_c4_l5'),
+        },
+        {
+          path: '#',
+          name: t('f_c4_l6'),
+        },
+      ],
+    },
+    {
+      category: t('f_c5'),
+      links: [],
+    },
+  ];
+
   return (
     <div className='w-full bg-blue-2 pt-10 csm:pt-24 relative mt-[70px]'>
       <Wrapper>
@@ -37,7 +139,7 @@ const Footer: React.FC = () => {
         <div className='w-full h-[40px] sm:h-[50px] border-t-[1px] border-black-3 flex justify-center items-center'>
           <Fade delay={500} triggerOnce>
             <p className='text-[14px] sm:text-[18px] font-normal text-black-2'>
-              © 2022 itsolve - All Rights Reserved
+              {t('copy_right')}
             </p>
           </Fade>
         </div>
@@ -48,104 +150,5 @@ const Footer: React.FC = () => {
 };
 
 // footerData array remains the same
-
-const footerData = [
-  {
-    category: 'Company',
-    links: [
-      {
-        path: '#',
-        name: 'About us',
-      },
-      {
-        path: '#',
-        name: 'Terms of service',
-      },
-      {
-        path: '#',
-        name: 'Privacy policy',
-      },
-      {
-        path: '#',
-        name: 'Contact us',
-      },
-      {
-        path: '#',
-        name: 'LinkedIn',
-      },
-    ],
-  },
-  {
-    category: 'Community',
-    links: [
-      {
-        path: '#',
-        name: 'Account upgrades',
-      },
-      {
-        path: '#',
-        name: 'Advertise with us',
-      },
-      {
-        path: '#',
-        name: 'Service offers',
-      },
-      {
-        path: '#',
-        name: 'Product offers',
-      },
-    ],
-  },
-  {
-    category: 'Resources',
-    links: [
-      {
-        path: '#',
-        name: 'User overview',
-      },
-      {
-        path: '#',
-        name: 'Creator overview',
-      },
-      {
-        path: '#',
-        name: 'Alternatives',
-      },
-      {
-        path: '#',
-        name: 'Migrations',
-      },
-    ],
-  },
-  {
-    category: 'Support',
-    links: [
-      {
-        path: '#',
-        name: 'Read our rules',
-      },
-      {
-        path: '#',
-        name: 'View our wiki',
-      },
-      {
-        path: '#',
-        name: 'Create a ticket',
-      },
-      {
-        path: '#',
-        name: 'Transaction dispute',
-      },
-      {
-        path: '#',
-        name: 'Status',
-      },
-    ],
-  },
-  {
-    category: 'Partners',
-    links: [],
-  },
-];
 
 export default Footer;

@@ -1,12 +1,52 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Wrapper from '../Shared/ComponentWrapper';
 import * as Icons from '../../../../svg/Icons';
 import Image from 'next/image';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
+import Typewriter from 'typewriter-effect/dist/core';
+import { useTranslation } from 'react-i18next';
 
 const ImportReviews: React.FC = () => {
+  const { t } = useTranslation();
+
+  const typewriterRef = useRef(null);
+  const [showReview1, setShowReview1] = useState(false);
+  const [showReview2, setShowReview2] = useState(false);
+  const [showReview3, setShowReview3] = useState(false);
+
+  useEffect(() => {
+    if (typewriterRef.current) {
+      new Typewriter(typewriterRef.current, {
+        strings: ['Import'],
+        autoStart: true,
+        changeDeleteSpeed: 3,
+        changeDelay: 2,
+        pauseFor: 100,
+        loop: true,
+      });
+    }
+  }, []);
+
+  const handleImportClick = () => {
+    setShowReview1(false);
+    setShowReview2(false);
+    setShowReview3(false);
+
+    setTimeout(() => {
+      setShowReview1(true);
+    }, 500);
+
+    setTimeout(() => {
+      setShowReview2(true);
+    }, 1000);
+
+    setTimeout(() => {
+      setShowReview3(true);
+    }, 1500);
+  };
+
   return (
     <div className='w-full py-10 bg-white-1'>
       <Wrapper>
@@ -14,30 +54,29 @@ const ImportReviews: React.FC = () => {
           <Fade triggerOnce className='w-full'>
             <div className='flex flex-col gap-2 csm:gap-4 w-full justify-center items-center'>
               <p className='text-[20px] csm:text-[25px] md:text-[30px] lg:text-[40px] text-black-1 font-semibold'>
-                Import existing reviews,{' '}
+                {t('im_title')},{' '}
                 <span className='uppercase text-[12px] sm:text-[16px] csm:text-[22px] md:text-[28px] lg:text-[35px] text-[#534599] font-rockSalt'>
-                  once click
+                  {t('one_click')}
                 </span>
               </p>
               <p className='text-[16px] csm:text-[18px] md:text-[20px] max-w-[550px] w-full text-center text-black-3 font-normal'>
-                Our advanced import module simplifies the process of importing
-                reviews from other platforms, saving you time and hassle.
+                {t('im_sub_title')}
               </p>
               {/* try it now ---->  */}
               <Fade delay={100} triggerOnce>
                 <div className='flex justify-center items-center gap-2'>
                   <p className='text-[12px] whitespace-nowrap sm:text-[16px] csm:text-[18px] md:text-[20px] lg:text-[24px] text-black-2 font-medium'>
-                    Try it now
+                    {t('try_it_now')}
                   </p>
                   <p className='text-[12px] whitespace-nowrap sm:text-[16px] csm:text-[18px] md:text-[20px] lg:text-[24px] text-[#F38B94] bg-[#FEECEE] px-[6px] md:px-[8px] py-[3px] md:py-[4px] rounded-[4px] font-medium'>
-                    20 free imports
+                    20 {t('free_import')}
                   </p>
                   <Icons.rightArrow
                     className='w-[24px] h-[24px]'
                     fill='#33363F'
                   />
                   <p className='text-[12px] whitespace-nowrap sm:text-[16px] csm:text-[18px] md:text-[20px] lg:text-[24px] text-[#15B1FE] font-medium'>
-                    20 free imports
+                    {t('how_it_work')}
                   </p>
                   <Icons.bulb className='w-[20px] lg:w-[24px] h-[20px] lg:h-[25px]' />
                 </div>
@@ -67,7 +106,7 @@ const ImportReviews: React.FC = () => {
                     <Fade cascade damping={0.5} triggerOnce>
                       <div className='flex flex-col gap-3 items-start'>
                         <p className='text-[18px] csm:text-[20px] lg:text-[24px] text-black-1 font-medium'>
-                          Charlie Robbbbieee
+                          {t('im_card_title')}
                         </p>
                         <div className='flex justify-center items-center gap-2 csm:gap-3'>
                           {/* send review icon -->  */}
@@ -75,7 +114,7 @@ const ImportReviews: React.FC = () => {
                             <button className='flex hover:opacity-80 justify-center rounded-md bg-[#534599] items-center gap-1 lg:gap-2 px-[10px] csm:px-[14px] lg:px-[16px] py-[8px]'>
                               <Icons.clickArrow className='w-[18px] csm:w-[24px] h-[18px] csm:h-[24px]' />
                               <p className='text-[12px] csm:text-[16px] lg:text-[18px] text-white-1 font-medium'>
-                                Send review
+                                {t('send_review')}
                               </p>
                             </button>
                           </Slide>
@@ -90,7 +129,7 @@ const ImportReviews: React.FC = () => {
                             <button className='csm:flex hidden bg-white-1 rounded-md px-[14px] lg:px-[16px] py-[8px] justify-center items-center gap-2'>
                               <Icons.report className='w-[20px] csm:w-[25px] h-[20px] csm:h-[25px]' />
                               <p className='text-black-2 text-[12px] csm:text-[18px] font-medium'>
-                                Report
+                                {t('report')}
                               </p>
                             </button>
                           </Fade>
@@ -101,17 +140,22 @@ const ImportReviews: React.FC = () => {
                   {/* import button ----> */}
                   <Zoom triggerOnce className='w-full csm:w-auto'>
                     <div className='w-full flex justify-center items-center gap-2'>
-                      <button className='flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'>
+                      <button
+                        onClick={handleImportClick}
+                        className='buttonScaleAnimation flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'
+                      >
                         <Icons.star className='w-[16px] csm:w-[19px] h-[16px] csm:h-[18px]' />
-                        <p className='text-white-1 text-[12px] csm:text-[16px] lg:text-[18px] font-medium'>
-                          Import
-                        </p>
+
+                        <p
+                          ref={typewriterRef}
+                          className='text-white-1 text-[12px] csm:text-[16px] lg:text-[18px] font-medium'
+                        ></p>
                       </button>
                       {/* report button for small screen  ---->  */}
                       <button className='flex csm:hidden bg-white-1 rounded-md px-[14px] lg:px-[16px] py-[8px] justify-center items-center gap-2'>
                         <Icons.report className='w-[20px] csm:w-[25px] h-[20px] csm:h-[25px]' />
                         <p className='text-black-2 text-[12px] csm:text-[18px] font-medium'>
-                          Report
+                          {t('report')}
                         </p>
                       </button>
                     </div>
@@ -121,61 +165,60 @@ const ImportReviews: React.FC = () => {
               {/* reviews --->  */}
               <div className='flex flex-col gap-1 w-full justify-center items-center'>
                 {/* upwork review -->  */}
-                <Slide
-                  direction='left'
-                  triggerOnce
-                  className='w-full flex justify-center items-center'
-                >
-                  <div className='w-full max-w-[320px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between items-center'>
+                {showReview1 && (
+                  <div
+                    className={`w-full max-w-[320px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between ${
+                      showReview1 ? 'reviewVisible' : ''
+                    } items-center`}
+                  >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.upwork className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
                       <p className='text-[14px] csm:text-[18px] text-black-2 font-medium'>
-                        Found 20 reviews
+                        {t('found_reviews')}
                       </p>
                     </div>
                     <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
-                      importing...
+                      {t('importing')}
                     </p>
                   </div>
-                </Slide>
+                )}
                 {/* fiver review ---> */}
-                <Fade damping={0.5} triggerOnce className='w-full'>
-                  <Zoom
-                    fraction={0.1}
-                    triggerOnce
-                    className='w-full flex justify-center items-center'
+                {showReview2 && (
+                  <div
+                    className={`w-full review-slide-in review-slide-out max-w-[300px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3 ${
+                      showReview2 ? 'reviewVisible' : ''
+                    } md:p-4 flex justify-between items-center`}
                   >
-                    <div className='w-full max-w-[300px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center'>
-                      <div className='flex justify-center items-center gap-2 csm:gap-3'>
-                        <Icons.fiver className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
-                        <p className='text-[14px] csm:text-[18px] text-black-2 font-medium'>
-                          Found 20 reviews
-                        </p>
-                      </div>
-                      <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
-                        importing...
+                    <div className='flex justify-center items-center gap-2 csm:gap-3'>
+                      <Icons.fiver className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
+                      <p className='text-[14px] csm:text-[18px] text-black-2 font-medium'>
+                        {t('found_reviews ')}
                       </p>
                     </div>
-                  </Zoom>
-                </Fade>
+                    <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
+                      {t('importing')}
+                    </p>
+                  </div>
+                )}
                 {/* google review ---> */}
-                <Slide
-                  direction='right'
-                  triggerOnce
-                  className='w-full flex justify-center items-center'
-                >
-                  <div className='w-full max-w-[280px] csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center'>
+
+                {showReview3 && (
+                  <div
+                    className={`w-full review-slide-in review-slide-out max-w-[280px] ${
+                      showReview3 ? 'reviewVisible' : ''
+                    } csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center`}
+                  >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.google className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
                       <p className='text-[14px] csm:text-[18px] text-black-2 font-medium'>
-                        Found 20 reviews
+                        {t('found_reviews ')}
                       </p>
                     </div>
                     <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
-                      importing...
+                      {t('importing')}
                     </p>
                   </div>
-                </Slide>
+                )}
               </div>
             </div>
           </Slide>

@@ -6,8 +6,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fade, Slide } from 'react-awesome-reveal'; // Import Fade and Slide for animations
 import * as Icons from '../../../../svg/Icons';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <div className='w-full min-h-screen flex flex-col justify-center items-center bg-blue-2 z-40'>
       <Wrapper style='h-full'>
@@ -26,14 +28,14 @@ const Hero = () => {
           {/* Title animation */}
           <Slide direction='up' triggerOnce>
             <h1 className='text-[30px] sm:text-[40px] cmd:text-[50px] lg:text-[60px] w-full max-w-[900px] text-center leading-[40px] sm:leading-[50px] cmd:leading-[60px] lg:leading-[70px] text-black-2 font-bold'>
-              Together, we empower your freelance journey.
+              {t('h_title')}
             </h1>
           </Slide>
           {/* Subtitle and links animation */}
           <Fade delay={500} triggerOnce>
             <div className='flex md:flex-row flex-col justify-center items-center gap-3'>
               <h2 className='text-[18px] sm:text-[20px] font-normal text-black-3'>
-                Explore our tailored solutions
+                {t('h_sub_title')}
               </h2>
               <div className='flex justify-center items-center gap-3'>
                 {heroLink.map((item, index) => (
@@ -59,7 +61,7 @@ const Hero = () => {
           <Slide direction='up' triggerOnce className='w-full'>
             <div className='w-full flex justify-center mt-5 items-center h-[50px] sm:h-[50px]'>
               <input
-                placeholder='Fill in our e-mail here to start your journey...'
+                placeholder={t('call_place_holder')}
                 type='text'
                 className='w-full max-w-[400px] h-full bg-white-1 rounded-l-[6px] placeholder:text-black-3 text-[14px] sm:text-[16px] font-normal px-3 focus:outline-none'
               />

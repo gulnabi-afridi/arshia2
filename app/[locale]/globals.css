@@ -57,6 +57,35 @@
   display: block;
 }
 
+/* import button styles --->  */
+
+@keyframes scaleUpDown {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.buttonScaleAnimation {
+  animation: scaleUpDown 2s infinite; /* Adjust time as needed */
+}
+
+/* reviews styles ------>  */
+
+.review-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.review-visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 @media screen and (max-width: 500px) {
   .slick-dots li button:before {
     font-size: 8px !important;
