@@ -12,7 +12,7 @@ const VerifiedReviews: React.FC = () => {
     <Fade duration={1200} triggerOnce>
       {' '}
       {/* General fade effect for the container */}
-      <div className='bg-white-1 lg:py-0 pt-10'>
+      <div className='bg-white-1 lg:py-0 pt-10 mt-[4rem] sm:mt-[6rem] csm:mt-[10rem]'>
         <Wrapper>
           <div className='w-full grid grid-cols-1 sm:gap-0 gap-4 lg:grid-cols-2 justify-center items-center'>
             {/* Left portion with slide effect */}

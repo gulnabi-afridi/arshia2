@@ -9,7 +9,7 @@ import * as Icons from '../../../../svg/Icons';
 
 const Hero = () => {
   return (
-    <div className='w-full min-h-screen flex flex-col justify-center items-center bg-blue-2'>
+    <div className='w-full min-h-screen flex flex-col justify-center items-center bg-blue-2 z-40'>
       <Wrapper style='h-full'>
         <div className='w-full h-full flex flex-col justify-center items-center gap-3'>
           {/* Image animation */}
@@ -40,14 +40,16 @@ const Hero = () => {
                   <Link
                     key={index}
                     href={item.path}
-                    className={` ${item.width} ${item.height} relative`}
+                    data-text={item.tooltip}
+                    className={` ${item.width} ${item.height} group tooltip`}
                   >
                     <Image
                       src={item.img}
                       fill
                       alt=''
-                      className='object-contain overflow-hidden'
+                      className='object-fill rounded-lg z-10 transition-transform duration-300 transform hover:scale-105'
                     />
+                    {/* <span className=''>{item.tooltip}</span> */}
                   </Link>
                 ))}
               </div>
@@ -68,6 +70,9 @@ const Hero = () => {
           </Slide>
         </div>
       </Wrapper>
+      <div className='w-full absolute -bottom-[380px] -z-10'>
+        <Icons.headerShape className='w-full h-[724px]' />
+      </div>
     </div>
   );
 };
@@ -78,18 +83,21 @@ const heroLink = [
     width: 'w-[80px] sm:w-[100px]',
     height: 'h-[40px]',
     img: '/assets/itSolveLogo1.svg',
+    tooltip: 'Tooltip 1',
   },
   {
     path: '#',
     width: 'w-[80px] sm:w-[100px]',
     height: 'h-[40px]',
     img: '/assets/itSolveLogo2.svg',
+    tooltip: 'Tooltip 2',
   },
   {
     path: '#',
     width: 'w-[80px] sm:w-[100px]',
-    height: 'h-[40px]',
-    img: '/assets/itSolveLogo3.svg',
+    height: 'h-[36px]',
+    img: '/assets/itSolveLogo3.png',
+    tooltip: 'Tooltip 3',
   },
 ];
 

@@ -16,6 +16,47 @@
   margin: auto !important;
 }
 
+/* tooltip styles ----->  */
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip:before {
+  content: attr(data-text);
+  position: absolute;
+  top: -70%;
+  transform: translateY(-50%);
+  width: 160px;
+  padding: 10px;
+  left: -40%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  display: none;
+}
+
+.tooltip:hover:before {
+  display: block;
+}
+
+.tooltip:after {
+  content: '';
+  position: absolute;
+  top: -14%;
+  left: 31%;
+  /* transform: translateY(0%); */
+  border: 10px solid #000;
+  rotate: -90deg;
+  border-color: transparent black transparent transparent;
+  display: none;
+}
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: block;
+}
+
 @media screen and (max-width: 500px) {
   .slick-dots li button:before {
     font-size: 8px !important;

@@ -31,13 +31,25 @@ export const headerShape: React.FC<Props> = ({
 }: Props) => (
   <svg
     className={className}
+    id='svg'
+    viewBox='0 0 1440 590'
     xmlns='http://www.w3.org/2000/svg'
-    viewBox='0 0 1440 320'
+    // class='transition duration-300 ease-in-out delay-150'
   >
+    <defs>
+      <linearGradient id='gradient' x1='0%' y1='50%' x2='100%' y2='50%'>
+        <stop offset='5%' stop-color='#F78DA7'></stop>
+        <stop offset='95%' stop-color='#8ED1FC'></stop>
+      </linearGradient>
+    </defs>
     <path
+      d='M 0,600 L 0,225 C 71.75119617224877,273.81339712918657 143.50239234449754,322.6267942583732 243,324 C 342.49760765550246,325.3732057416268 469.7416267942584,279.3062200956938 590,247 C 710.2583732057416,214.6937799043062 823.5311004784689,196.14832535885162 912,208 C 1000.4688995215311,219.85167464114838 1064.1339712918661,262.10047846889955 1148,270 C 1231.8660287081339,277.89952153110045 1335.933014354067,251.44976076555022 1440,225 L 1440,600 L 0,600 Z'
+      stroke='none'
+      stroke-width='0'
       fill='#BFEAFF'
       fill-opacity='1'
-      d='M0,320L60,288C120,256,240,192,360,181.3C480,171,600,213,720,224C840,235,960,213,1080,192C1200,171,1320,149,1380,138.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'
+      // class='transition-all duration-300 ease-in-out delay-150 path-0'
+      transform='rotate(-180 720 300)'
     ></path>
   </svg>
 );
