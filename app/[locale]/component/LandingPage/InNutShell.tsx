@@ -111,7 +111,7 @@ const InNutShell: React.FC = () => {
                         href=''
                         className='inline-block text-white-1 bg-blue-1 mt-2 text-black font-medium rounded-md px-4 py-2 transition duration-300 hover:bg-opacity-80'
                       >
-                        {t('comming_soon')}
+                        {t('click_here')}
                       </Link>
                     </div>
                   </div>

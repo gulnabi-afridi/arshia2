@@ -253,18 +253,17 @@ const Navibar = () => {
                     {/* links ---->  */}
                     <div className='flex flex-col justify-center items-center gap-5'>
                       {/* services --->  */}
-                      <Link
-                        href='#'
+                      <button
+                        onClick={togglePlatFormDrawer}
                         className='flex justify-center bg-transparent items-center gap-0 hover:opacity-80'
                       >
                         <p className='text-[22px] font-semibold text-black-2'>
                           {t('h_platform')}
                         </p>
                         <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
-                      </Link>
+                      </button>
                       {/* itsolve --->  */}
-                      <Link
-                        href='#'
+                      <button
                         onClick={toggleItSolveDrawer}
                         className='flex justify-center items-center gap-0 hover:opacity-80'
                       >
@@ -272,7 +271,7 @@ const Navibar = () => {
                           {t('h_itsolve')}
                         </p>
                         <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
-                      </Link>
+                      </button>
                       {/* itsolve --->  */}
                       <Link
                         href='#'
@@ -312,13 +311,13 @@ const Navibar = () => {
       </div>
       {/* itSolve drawer ----->  */}
       <div
-        className={`fixed h-[85%] bg-blue-1/90 -top-4 md:top-0 left-0 w-full flex justify-center items-center z-40 transition-transform ease-in-out ease-out duration-700 ${
+        className={`fixed h-[95%] sm:h-[85%] bg-blue-1 -top-4 md:top-0 left-0 w-full flex justify-center items-center z-40 transition-transform ease-in-out ease-out duration-700 ${
           showItSolveDrawer ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
         <Wrapper style='h-full w-full '>
-          <div className='w-full h-full grid grid-cols-3 '>
-            <div className='w-full h-full border-l-[1px] border-black-1 border-r-[1px]'></div>
+          <div className='w-full h-full grid grid-cols-1 md:grid-cols-3 '>
+            <div className='md:block hidden w-full h-full border-l-[1px] border-black-1 border-r-[1px]'></div>
             <div className='w-fill flex flex-col gap-4 justify-center items-center'>
               {itSolveDrawerLinks.map((item, index) => {
                 return (
@@ -334,7 +333,7 @@ const Navibar = () => {
                 );
               })}
             </div>
-            <div className='w-full h-full border-l-[1px] border-black-1 border-r-[1px]'></div>
+            <div className='w-full md:block hidden h-full border-l-[1px] border-black-1 border-r-[1px]'></div>
           </div>
         </Wrapper>
       </div>
@@ -342,7 +341,7 @@ const Navibar = () => {
       <div className='w-full'>
         {/* first portion ---->  */}
         <div
-          className={`fixed h-[70%] sm:h-[90%] md:h-[78%] bg-blue-1 -top-4 md:top-0 left-0 w-full flex justify-center items-center z-40 transition-transform ease-in-out ease-out duration-700 ${
+          className={`fixed h-[75%] sm:h-[90%] md:h-[78%] bg-blue-1 -top-4 md:top-0 left-0 w-full flex justify-center items-center z-40 transition-transform ease-in-out ease-out duration-700 ${
             showPlatFormFirstDrawer ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
@@ -434,10 +433,10 @@ const platFormDrawerDataSmallScreen = [
   },
   {
     path: '#',
-    name: 'Platform 1',
+    name: 'Platform 2',
   },
   {
     path: '#',
-    name: 'Platform 1',
+    name: 'Platform 3',
   },
 ];
