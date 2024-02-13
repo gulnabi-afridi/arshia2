@@ -166,15 +166,10 @@ const Navibar = () => {
                 <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
               </Link>
               {/* change language --->  */}
-              <OutSideClick
-                Event={() => {
-                  setShowLanguageMenu(false);
-                }}
-                style='relative bottom-0'
-              >
+              <div className='relative bottom-0'>
                 <button
                   onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-                  className='flex justify-center px-3 py-3 rounded-[10px] hover:bg-blue-1/90 bg-transparent items-center gap-0 hover:opacity-80'
+                  className='flex justify-center px-3 z-50 py-3 rounded-[10px] hover:bg-blue-1/90 bg-transparent items-center gap-0 hover:opacity-80'
                 >
                   <p className='text-[18px] font-semibold text-black-2'>en</p>
                   <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
@@ -202,7 +197,7 @@ const Navibar = () => {
                     </button>
                   </div>
                 )}
-              </OutSideClick>
+              </div>
             </div>
             {/* signUp + signIn links -----> */}
             <div className='hidden lg:flex justify-center items-center gap-3'>
@@ -289,22 +284,48 @@ const Navibar = () => {
                         <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
                       </Link>
                       {/* change language --->  */}
-                      <Link
-                        href='#'
-                        className='flex justify-center items-center gap-0 hover:opacity-80'
-                      >
-                        <p className='text-[22px] font-semibold text-black-2'>
-                          en
-                        </p>
-                        <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
-                      </Link>
+                      <div className='relative bottom-0'>
+                        <button
+                          onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                          className='flex justify-center px-3  rounded-[10px] hover:bg-blue-1/90 bg-transparent items-center gap-0 hover:opacity-80'
+                        >
+                          <p className='text-[22px] font-semibold text-black-2'>
+                            en
+                          </p>
+                          <MdOutlineKeyboardArrowDown className='text-[26px] text-black-2' />
+                        </button>
+                        {showLanguageMenu && (
+                          <div className='w-[150px] flex bg-white-1 rounded-lg -bottom-[78px] -right-[40px] flex-col shadow-xl absolute'>
+                            <button
+                              onClick={() => {
+                                i18n.changeLanguage('en');
+                                setShowLanguageMenu(false);
+                                setIsOpen(false);
+                              }}
+                              className='text-[16px] h-[35px] w-full hover:bg-black-1/5 rounded-t-xl text-black-1 font-medium'
+                            >
+                              English
+                            </button>
+                            <button
+                              onClick={() => {
+                                i18n.changeLanguage('fr');
+                                setShowLanguageMenu(false);
+                                setIsOpen(false);
+                              }}
+                              className='text-[16px] h-[35px] w-full hover:bg-black-1/5 rounded-b-xl text-black-1 font-medium'
+                            >
+                              French
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </div>
                     {/* signIn + signUp button --->  */}
                     <div className='flex justify-center items-center gap-3 mt-4'>
-                      <button className='w-[150px] sm:w-[100px] h-[45px] active:translate-y-[1px] rounded-[6px] bg-blue-1 text-[18px] font-semibold text-white-1 hover:opacity-80'>
+                      <button className='px-6 h-[45px] active:translate-y-[1px] rounded-[6px] bg-blue-1 text-[18px] font-semibold text-white-1 hover:opacity-80'>
                         {t('sign_up')}
                       </button>
-                      <button className='w-[150px] sm:w-[100px] h-[45px] active:translate-y-[1px] rounded-[6px] border-[1px] border-blue-1 text-[18px] font-semibold text-black-2 hover:opacity-80'>
+                      <button className='px-6 h-[45px] active:translate-y-[1px] rounded-[6px] border-[1px] border-blue-1 text-[18px] font-semibold text-black-2 hover:opacity-80'>
                         {t('login')}
                       </button>
                     </div>
