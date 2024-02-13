@@ -14,7 +14,7 @@ const ServicesOffer: React.FC = () => {
   return (
     <div className='w-full pb-0 pt-10 csm:pb-10 bg-white-1'>
       <Wrapper>
-        <div className='flex flex-col gap-0 lg:gap-4 w-full justify-center items-center'>
+        <div className='flex flex-col gap-2 lg:gap-4 w-full justify-center items-center'>
           <Fade cascade triggerOnce>
             <p className='text-[22px] whitespace-nowrap sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] text-black-1 font-semibold'>
               {t('offer_title')}{' '}
@@ -57,13 +57,16 @@ const ServicesOffer: React.FC = () => {
             </div>
           </Slide>
           {/* image ---->  */}
-          <Zoom triggerOnce className='w-full flex justify-center items-center'>
-            <div className='w-full max-w-[400px] csm:max-w-[1050px] h-[250px] sm:h-[500px] cmd:h-[600px] lg:h-[650px] relative'>
+          <Zoom
+            triggerOnce
+            className='w-full flex justify-center items-center lg:mt-0 mt-2'
+          >
+            <div className='w-full max-w-[400px] csm:max-w-[1050px] h-[270px] sm:h-[300px] csm:h-[400px] cmd:h-[600px] lg:h-[650px] relative'>
               <Image
                 src='/assets/servicesOffer.svg'
                 fill
                 alt=''
-                className='object-fill rounded-lg'
+                className='object-cover lg:object-fill rounded-lg'
               />
             </div>
           </Zoom>

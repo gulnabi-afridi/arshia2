@@ -9,7 +9,7 @@ import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { RxCross1 } from 'react-icons/rx';
-import { Slide, Zoom } from 'react-awesome-reveal';
+import { Fade, Zoom } from 'react-awesome-reveal';
 import OutSideClick from '@/app/hooks/OutSideClick';
 import * as Icons from '../../../../svg/Icons';
 import { useTranslation } from 'react-i18next';
@@ -389,22 +389,35 @@ const Navibar = () => {
               {/* for small screen ---->  */}
               {platFormDrawerDataSmallScreen.map((item, index) => {
                 return (
-                  <Link
-                    href={item.path}
-                    className='w-full md:hidden border-[1px] border-black-1 rounded-xl p-3 sm:p-5 flex flex-col'
+                  <Fade
+                    key={index}
+                    triggerOnce
+                    direction='up'
+                    delay={100 * index}
                   >
-                    <h2 className='text-[24px] sm:text-[26px] csm:text-[22px] md:text-[30px] font-medium text-black-1'>
-                      {item.name}
-                    </h2>
-                  </Link>
+                    <Link
+                      href={item.path}
+                      className='w-full md:hidden border-[1px] border-black-1 rounded-xl p-3 sm:p-5 flex flex-col'
+                    >
+                      <h2 className='text-[24px] sm:text-[26px] csm:text-[22px] md:text-[30px] font-medium text-black-1'>
+                        {item.name}
+                      </h2>
+                    </Link>
+                  </Fade>
                 );
               })}
               {/*  */}
-              <button className='flex md:hidden border-[1px] border-black-1 rounded-xl w-full justify-between p-3 sm:p-5 items-center gap-10'>
-                <h2 className='text-[24px] sm:text-[26px] csm:text-[22px] md:text-[30px] text-black-1 font-medium'>
-                  Let's work together
-                </h2>
-              </button>
+              <Fade
+                triggerOnce
+                direction='up'
+                delay={100 * platFormDrawerDataSmallScreen.length}
+              >
+                <button className='flex md:hidden border-[1px] border-black-1 rounded-xl w-full justify-between p-3 sm:p-5 items-center gap-10'>
+                  <h2 className='text-[24px] sm:text-[26px] csm:text-[22px] md:text-[30px] text-black-1 font-medium'>
+                    Let's work together
+                  </h2>
+                </button>
+              </Fade>
             </div>
           </Wrapper>
         </div>

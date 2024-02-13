@@ -33,7 +33,7 @@ const InNutShell: React.FC = () => {
               <div className='w-full col-span-1 md:col-span-2 lg:col-span-3 gap-5 grid grid-cols-1 md:grid-cols-2'>
                 <Slide direction='up' delay={50} triggerOnce className='w-full'>
                   <div className='w-full flex justify-center items-center'>
-                    <div className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[250px] sm:h-[300px] lg:h-[440px] relative overflow-hidden group'>
+                    <div className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[270px] sm:h-[300px] lg:h-[440px] relative overflow-hidden group'>
                       <Image
                         src='/assets/nutShell1.svg'
                         alt='Descriptive Text for Image'
@@ -65,7 +65,7 @@ const InNutShell: React.FC = () => {
                   className='w-full'
                 >
                   <div className='w-full flex justify-center items-center'>
-                    <div className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[250px] sm:h-[300px] lg:h-[440px] relative overflow-hidden group'>
+                    <div className='w-full max-w-[400px] md:max-w-full rounded-xl shadow-lg h-[270px] sm:h-[300px] lg:h-[440px] relative overflow-hidden group'>
                       <Image
                         src='/assets/nutShell2.svg'
                         alt='Descriptive Text for Image'
@@ -95,7 +95,7 @@ const InNutShell: React.FC = () => {
               {/* three cols --> */}
               <Slide direction='up' delay={150} triggerOnce className='w-full'>
                 <div className='w-full flex justify-center items-center relative rounded-xl overflow-hidden group'>
-                  <div className='w-full max-w-[400px] md:max-w-full rounded-xl h-[250px] sm:h-[300px] clg:h-[400px] shadow-lg'>
+                  <div className='w-full max-w-[400px] md:max-w-full rounded-xl h-[270px] sm:h-[300px] clg:h-[400px] shadow-lg'>
                     <Image
                       src='/assets/nutShell3.svg'
                       alt=''
@@ -134,7 +134,7 @@ const InNutShell: React.FC = () => {
               </Slide>
               <Slide direction='up' delay={250} triggerOnce className='w-full'>
                 <div className='w-full flex justify-center items-center relative rounded-xl overflow-hidden group'>
-                  <div className='w-full max-w-[400px] md:max-w-full rounded-xl h-[250px] sm:h-[300px] clg:h-[400px] shadow-lg'>
+                  <div className='w-full max-w-[400px] md:max-w-full rounded-xl h-[270px] sm:h-[300px] clg:h-[400px] shadow-lg'>
                     <Image
                       src='/assets/nutShell5.svg'
                       alt=''
