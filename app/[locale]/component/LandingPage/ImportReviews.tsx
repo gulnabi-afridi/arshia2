@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
 import Typewriter from 'typewriter-effect/dist/core';
 import { useTranslation } from 'react-i18next';
+import Spinner from '../Shared/Spinner';
 
 const ImportReviews: React.FC = () => {
   const { t } = useTranslation();
@@ -15,11 +16,16 @@ const ImportReviews: React.FC = () => {
   const [showReview1, setShowReview1] = useState<boolean | string>(false);
   const [showReview2, setShowReview2] = useState<boolean | string>(false);
   const [showReview3, setShowReview3] = useState<boolean | string>(false);
+  const [importStatus, setImportStatus] = useState({
+    1: 'importing',
+    2: 'importing',
+    3: 'importing',
+  });
 
   useEffect(() => {
     if (typewriterRef.current) {
       new Typewriter(typewriterRef.current, {
-        strings: ['Import'],
+        strings: ['Reviews'],
         autoStart: true,
         changeDeleteSpeed: 3,
         changeDelay: 2,
@@ -30,17 +36,32 @@ const ImportReviews: React.FC = () => {
   }, []);
 
   const handleImportClick = () => {
+    setImportStatus({ 1: 'importing', 2: 'importing', 3: 'importing' });
+
     setTimeout(() => {
       setShowReview1(true);
     }, 500);
+    setTimeout(
+      () => setImportStatus((prev) => ({ ...prev, 1: 'imported' })),
+      2500
+    );
 
     setTimeout(() => {
       setShowReview2(true);
     }, 1000);
+    setTimeout(
+      () => setImportStatus((prev) => ({ ...prev, 2: 'imported' })),
+      3000
+    );
 
     setTimeout(() => {
       setShowReview3(true);
     }, 1500);
+    setTimeout(
+      () => setImportStatus((prev) => ({ ...prev, 3: 'imported' })),
+      3500
+    );
+
     setTimeout(() => setShowReview1('hiding'), 4500);
     setTimeout(() => setShowReview2('hiding'), 5000);
     setTimeout(() => setShowReview3('hiding'), 5500);
@@ -95,7 +116,7 @@ const ImportReviews: React.FC = () => {
                 triggerOnce
                 className='w-full flex justify-center items-center'
               >
-                <div className='w-full max-w-[580px] md:gap-0 gap-1 md:max-w-[880px] p-3 sm:p-5 lg:p-6 flex md:flex-row flex-col justify-between items-start csm:items-center rounded-[15px] bg-[#D0D8FF]'>
+                <div className='w-full relative max-w-[580px] md:gap-0 gap-1 md:max-w-[880px] p-3 sm:p-5 lg:p-6 flex md:flex-row flex-col justify-between items-start csm:items-center rounded-[15px] bg-[#D0D8FF]'>
                   {/* left portion --->  */}
                   <div className='flex gap-3 justify-center items-start'>
                     <Fade triggerOnce>
@@ -174,6 +195,27 @@ const ImportReviews: React.FC = () => {
                       <p></p>
                     </div>
                   </Zoom>
+                  {/* arrow icon */}
+                  <div className='absolute -right-[14rem] -top-[10rem]'>
+                    <div className='w-[240px] h-[280px] relative'>
+                      <Image
+                        src='/assets/fillArrow.svg'
+                        alt=''
+                        className='object-cover opacity-70'
+                        fill
+                      />
+                      {/* text  */}
+                      <div className='flex justify-center items-center gap-2 absolute top-[5rem] -left-[1rem]'>
+                        <p className='text-[24px] text-[#534599] font-bold '>
+                          Import
+                        </p>
+                        <p
+                          ref={typewriterRef}
+                          className='text-[24px] text-[#534599] font-bold '
+                        ></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Zoom>
               {/* reviews --->  */}
@@ -193,9 +235,20 @@ const ImportReviews: React.FC = () => {
                         {t('found_reviews')}
                       </p>
                     </div>
-                    <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
-                      {t('importing')}
-                    </p>
+                    <div className='flex justify-center items-center gap-2'>
+                      {importStatus[1] === 'importing' ? (
+                        <>
+                          <Spinner />
+                          <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
+                            {t('importing')}...
+                          </p>
+                        </>
+                      ) : (
+                        <p className='text-[14px] csm:text-[18px] text-[#534599] font-medium'>
+                          imported
+                        </p>
+                      )}
+                    </div>
                   </div>
                 )}
                 {/* fiver review ---> */}
@@ -215,9 +268,20 @@ const ImportReviews: React.FC = () => {
                         {t('found_reviews ')}
                       </p>
                     </div>
-                    <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
-                      {t('importing')}
-                    </p>
+                    <div className='flex justify-center items-center gap-2'>
+                      {importStatus[2] === 'importing' ? (
+                        <>
+                          <Spinner />
+                          <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
+                            {t('importing')}...
+                          </p>
+                        </>
+                      ) : (
+                        <p className='text-[14px] csm:text-[18px] text-[#534599] font-medium'>
+                          imported
+                        </p>
+                      )}
+                    </div>
                   </div>
                 )}
                 {/* google review ---> */}
@@ -238,9 +302,20 @@ const ImportReviews: React.FC = () => {
                         {t('found_reviews ')}
                       </p>
                     </div>
-                    <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
-                      {t('importing')}
-                    </p>
+                    <div className='flex justify-center items-center gap-2'>
+                      {importStatus[3] === 'importing' ? (
+                        <>
+                          <Spinner />
+                          <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
+                            {t('importing')}...
+                          </p>
+                        </>
+                      ) : (
+                        <p className='text-[14px] csm:text-[18px] text-[#534599] font-medium'>
+                          imported
+                        </p>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
