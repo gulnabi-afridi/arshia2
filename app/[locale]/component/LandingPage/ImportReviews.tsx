@@ -224,7 +224,7 @@ const ImportReviews: React.FC = () => {
                 {showReview1 && (
                   <div
                     onAnimationEnd={() => handleAnimationEnd(1)}
-                    className={`w-full max-w-[320px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between
+                    className={`w-full max-w-[340px] sm:max-w-[380px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between
                     ${showReview1 === 'hiding' ? 'review-slide-out ' : ''} 
                     ${showReview1 === true ? 'review-slide-in' : ''}
                     items-center`}
@@ -255,7 +255,7 @@ const ImportReviews: React.FC = () => {
                 {showReview2 && (
                   <div
                     onAnimationEnd={() => handleAnimationEnd(2)}
-                    className={`w-full max-w-[300px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3      ${
+                    className={`w-full max-w-[320px] sm:max-w-[360px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3      ${
                       showReview2 === 'hiding' ? 'review-slide-out ' : ''
                     } 
                     ${
@@ -289,12 +289,12 @@ const ImportReviews: React.FC = () => {
                 {showReview3 && (
                   <div
                     onAnimationEnd={() => handleAnimationEnd(3)}
-                    className={`w-full  max-w-[280px] ${
+                    className={`w-full  max-w-[300px] ${
                       showReview3 === 'hiding' ? 'review-slide-out ' : ''
                     } 
                     ${
                       showReview3 === true ? 'review-slide-in' : ''
-                    } csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center`}
+                    } sm:max-w-[340px] csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center`}
                   >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.google className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />

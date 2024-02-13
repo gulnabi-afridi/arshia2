@@ -233,7 +233,13 @@ const Navibar = () => {
             <div className='lg:hidden block'>
               <RxHamburgerMenu
                 onClick={toggleDrawer}
-                className='text-[30px] sm:text-[30px] md:text-[40px] text-blue-1'
+                className={`text-[30px] sm:text-[30px] md:text-[40px] ${
+                  showItSolveDrawer ||
+                  showPlatFormFirstDrawer ||
+                  showPlatFormSecDrawer
+                    ? 'text-black-1'
+                    : 'text-blue-1'
+                } `}
               />
               <Drawer
                 open={isOpen}
@@ -321,7 +327,12 @@ const Navibar = () => {
             <div className='w-fill flex flex-col gap-4 justify-center items-center'>
               {itSolveDrawerLinks.map((item, index) => {
                 return (
-                  <Zoom key={index} direction='down' delay={100 * index}>
+                  <Zoom
+                    key={index}
+                    triggerOnce
+                    direction='down'
+                    delay={100 * index}
+                  >
                     <Link
                       key={index}
                       href={item.path}
@@ -341,12 +352,12 @@ const Navibar = () => {
       <div className='w-full'>
         {/* first portion ---->  */}
         <div
-          className={`fixed h-[75%] sm:h-[90%] md:h-[78%] bg-blue-1 -top-4 md:top-0 left-0 w-full flex justify-center items-center z-40 transition-transform ease-in-out ease-out duration-700 ${
+          className={`fixed h-[90%] csm:h-[90%] md:h-[78%] bg-blue-1 -top-4 md:top-0 left-0 w-full flex justify-center items-center z-40 transition-transform ease-in-out ease-out duration-700 ${
             showPlatFormFirstDrawer ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
           <Wrapper style='h-full'>
-            <div className='w-full grid justify-center gap-3 sm:gap-4 lg:gap-6 items-center grid-cols-2 md:grid-cols-3 mt-[9rem] md:mt-[9rem]'>
+            <div className='w-full grid justify-center gap-3 sm:gap-4 lg:gap-6 items-center grid-cols-1 csm:grid-cols-2 md:grid-cols-3 mt-[9rem] md:mt-[9rem]'>
               {/* ist and sec card --->  */}
               {platFormDrawer.map((item, index) => {
                 return (
@@ -382,18 +393,24 @@ const Navibar = () => {
                     href={item.path}
                     className='w-full md:hidden border-[1px] border-black-1 rounded-xl p-3 sm:p-5 flex flex-col'
                   >
-                    <h2 className='text-[20px] sm:text-[26px] csm:text-[35px] font-semibold text-black-1'>
+                    <h2 className='text-[24px] sm:text-[26px] csm:text-[22px] md:text-[30px] font-medium text-black-1'>
                       {item.name}
                     </h2>
                   </Link>
                 );
               })}
+              {/*  */}
+              <button className='flex md:hidden border-[1px] border-black-1 rounded-xl w-full justify-between p-3 sm:p-5 items-center gap-10'>
+                <h2 className='text-[24px] sm:text-[26px] csm:text-[22px] md:text-[30px] text-black-1 font-medium'>
+                  Let's work together
+                </h2>
+              </button>
             </div>
           </Wrapper>
         </div>
         {/* sec portion ---> */}
         <div
-          className={`fixed h-[90%] md:flex hidden bg-white-1/90 z-10 -top-4 md:top-0 left-0 w-full justify-center items-center transition-transform ease-in-out ease-out duration-1000 ${
+          className={`fixed h-[90%] md:flex hidden bg-white-1/90 z-30 -top-4 md:top-0 left-0 w-full justify-center items-center transition-transform ease-in-out ease-out duration-1000 ${
             showPlatFormSecDrawer ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
@@ -401,7 +418,7 @@ const Navibar = () => {
             <div className='w-full h-full flex justify-start items-end pb-[18px]'>
               <div className='flex justify-center items-center gap-10'>
                 <h2 className='text-[30px] text-black-1 font-medium'>
-                  Link for our site
+                  Let's work together
                 </h2>
                 <button className='text-white-1 cursor-pointer hover:opacity-80 text-[16px] font-medium bg-black-1 px-[40px] py-4 rounded-[60px]'>
                   {t('click_here')}

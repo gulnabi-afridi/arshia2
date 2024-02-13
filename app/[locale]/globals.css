@@ -138,13 +138,13 @@
     transform: translateY(-50%);
     width: 120px;
     padding: 8px;
-    left: -40%;
+    left: -20%;
     font-size: 16px;
     border-radius: 10px;
   }
   .tooltip:after {
-    top: -16%;
-    left: 26%;
+    top: -17%;
+    left: 32%;
   }
 }
 

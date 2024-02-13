@@ -82,16 +82,16 @@ const Hero = () => {
 const heroLink = [
   {
     path: '#',
-    width: 'w-[80px] sm:w-[100px]',
-    height: 'h-[38px] sm:h-[40px]',
+    width: 'w-[100px] sm:w-[100px]',
+    height: 'h-[35px] sm:h-[40px]',
     img: '/assets/itSolveLogo1.svg',
     tooltip: 'Tooltip 1',
   },
 
   {
     path: '#',
-    width: 'w-[80px] sm:w-[100px]',
-    height: 'h-[30px] sm:h-[36px]',
+    width: 'w-[100px] sm:w-[100px]',
+    height: 'h-[35px] sm:h-[36px]',
     img: '/assets/itSolveLogo3.png',
     tooltip: 'Tooltip 2',
   },

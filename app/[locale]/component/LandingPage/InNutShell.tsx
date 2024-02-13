@@ -44,7 +44,7 @@ const InNutShell: React.FC = () => {
                       <div className='absolute inset-0 flex justify-center items-center bg-black-1/70 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out'>
                         {/* Background for text to ensure readability */}
                         <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
-                          <p className='mb-4 text-white-1 text-[20px] font-normal'>
+                          <p className='mb-4 text-white-1 text-[14px] sm:text-[20px] font-normal'>
                             {t('dummy_text')}
                           </p>
                           <Link
@@ -76,7 +76,7 @@ const InNutShell: React.FC = () => {
                       <div className='absolute inset-0 flex justify-center items-center bg-black-1/70 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out'>
                         {/* Background for text to ensure readability */}
                         <div className='text-center p-4 bg-black bg-opacity-60 rounded-lg'>
-                          <p className='mb-4 text-white-1 text-[20px] font-normal'>
+                          <p className='mb-4 text-white-1 text-[14px] sm:text-[20px] font-normal'>
                             {t('dummy_text')}
                           </p>
                           <Link
@@ -115,7 +115,6 @@ const InNutShell: React.FC = () => {
                       </Link>
                     </div>
                   </div>
-                  r
                 </div>
               </Slide>
               <Slide direction='up' delay={200} triggerOnce className='w-full'>

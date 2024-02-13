@@ -14,7 +14,7 @@ const ServicesOffer: React.FC = () => {
   return (
     <div className='w-full pb-0 pt-10 csm:pb-10 bg-white-1'>
       <Wrapper>
-        <div className='flex flex-col gap-0 lg:gap-4 w-full justify-center items-start sm:items-center'>
+        <div className='flex flex-col gap-0 lg:gap-4 w-full justify-center items-center'>
           <Fade cascade triggerOnce>
             <p className='text-[22px] whitespace-nowrap sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] text-black-1 font-semibold'>
               {t('offer_title')}{' '}
@@ -24,7 +24,7 @@ const ServicesOffer: React.FC = () => {
                 <Icons.underline className='w-[70px] sm:w-[130px] csm:w-[180px] md:w-[300px] h-[18px] absolute right-0 csm:-right-4 lg:-right-10 -bottom-1 csm:bottom-0' />
               </span>
             </p>
-            <p className='text-[18px] md:text-[20px] max-w-[1050px] w-full text-center mt-3 md:mt-0 lg:mt-1 text-black-3 font-normal'>
+            <p className='text-[16px] csm:text-[18px] md:text-[20px] max-w-[1050px] w-full text-center mt-3 md:mt-0 lg:mt-1 text-black-3 font-normal'>
               {t('offer_sub_title')}
             </p>
           </Fade>
