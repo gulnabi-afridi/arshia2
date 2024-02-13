@@ -115,6 +115,7 @@ const InNutShell: React.FC = () => {
                       </Link>
                     </div>
                   </div>
+                  r
                 </div>
               </Slide>
               <Slide direction='up' delay={200} triggerOnce className='w-full'>

@@ -167,9 +167,8 @@ const ImportReviews: React.FC = () => {
                 {/* upwork review -->  */}
                 {showReview1 && (
                   <div
-                    className={`w-full max-w-[320px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between ${
-                      showReview1 ? 'reviewVisible' : ''
-                    } items-center`}
+                    className={`w-full max-w-[320px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between
+                    review-slide-in items-center`}
                   >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.upwork className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
@@ -185,9 +184,7 @@ const ImportReviews: React.FC = () => {
                 {/* fiver review ---> */}
                 {showReview2 && (
                   <div
-                    className={`w-full review-slide-in review-slide-out max-w-[300px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3 ${
-                      showReview2 ? 'reviewVisible' : ''
-                    } md:p-4 flex justify-between items-center`}
+                    className={`w-full review-slide-in review-slide-out max-w-[300px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3 review-slide-in md:p-4 flex justify-between items-center`}
                   >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.fiver className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
@@ -204,9 +201,7 @@ const ImportReviews: React.FC = () => {
 
                 {showReview3 && (
                   <div
-                    className={`w-full review-slide-in review-slide-out max-w-[280px] ${
-                      showReview3 ? 'reviewVisible' : ''
-                    } csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center`}
+                    className={`w-full review-slide-in review-slide-out max-w-[280px] review-slide-in csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center`}
                   >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.google className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
