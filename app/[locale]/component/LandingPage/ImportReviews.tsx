@@ -12,9 +12,9 @@ const ImportReviews: React.FC = () => {
   const { t } = useTranslation();
 
   const typewriterRef = useRef(null);
-  const [showReview1, setShowReview1] = useState(false);
-  const [showReview2, setShowReview2] = useState(false);
-  const [showReview3, setShowReview3] = useState(false);
+  const [showReview1, setShowReview1] = useState<boolean | string>(false);
+  const [showReview2, setShowReview2] = useState<boolean | string>(false);
+  const [showReview3, setShowReview3] = useState<boolean | string>(false);
 
   useEffect(() => {
     if (typewriterRef.current) {
@@ -30,10 +30,6 @@ const ImportReviews: React.FC = () => {
   }, []);
 
   const handleImportClick = () => {
-    setShowReview1(false);
-    setShowReview2(false);
-    setShowReview3(false);
-
     setTimeout(() => {
       setShowReview1(true);
     }, 500);
@@ -45,6 +41,15 @@ const ImportReviews: React.FC = () => {
     setTimeout(() => {
       setShowReview3(true);
     }, 1500);
+    setTimeout(() => setShowReview1('hiding'), 4500);
+    setTimeout(() => setShowReview2('hiding'), 5000);
+    setTimeout(() => setShowReview3('hiding'), 5500);
+  };
+
+  const handleAnimationEnd = (reviewNumber: number) => {
+    if (reviewNumber === 1 && showReview1 === 'hiding') setShowReview1(false);
+    if (reviewNumber === 2 && showReview2 === 'hiding') setShowReview2(false);
+    if (reviewNumber === 3 && showReview3 === 'hiding') setShowReview3(false);
   };
 
   return (
@@ -142,14 +147,21 @@ const ImportReviews: React.FC = () => {
                     <div className='w-full flex justify-center items-center gap-2'>
                       <button
                         onClick={handleImportClick}
-                        className='buttonScaleAnimation flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'
+                        disabled={
+                          showReview1 === true &&
+                          showReview2 === true &&
+                          showReview3 === true
+                        }
+                        className='buttonScaleAnimation disabled:opacity-50 disabled:cursor-not-allowed flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'
                       >
                         <Icons.star className='w-[16px] csm:w-[19px] h-[16px] csm:h-[18px]' />
 
                         <p
-                          ref={typewriterRef}
+                          // ref={typewriterRef}
                           className='text-white-1 text-[12px] csm:text-[16px] lg:text-[18px] font-medium'
-                        ></p>
+                        >
+                          Import
+                        </p>
                       </button>
                       {/* report button for small screen  ---->  */}
                       <button className='flex csm:hidden bg-white-1 rounded-md px-[14px] lg:px-[16px] py-[8px] justify-center items-center gap-2'>
@@ -167,8 +179,11 @@ const ImportReviews: React.FC = () => {
                 {/* upwork review -->  */}
                 {showReview1 && (
                   <div
+                    onAnimationEnd={() => handleAnimationEnd(1)}
                     className={`w-full max-w-[320px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between
-                    review-slide-in items-center`}
+                    ${showReview1 === 'hiding' ? 'review-slide-out ' : ''} 
+                    ${showReview1 === true ? 'review-slide-in' : ''}
+                    items-center`}
                   >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.upwork className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
@@ -184,7 +199,13 @@ const ImportReviews: React.FC = () => {
                 {/* fiver review ---> */}
                 {showReview2 && (
                   <div
-                    className={`w-full review-slide-in review-slide-out max-w-[300px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3 review-slide-in md:p-4 flex justify-between items-center`}
+                    onAnimationEnd={() => handleAnimationEnd(2)}
+                    className={`w-full max-w-[300px] csm:max-w-[460px] md:max-w-[700px] bg-[#F3F5F7] rounded-[10px] p-3      ${
+                      showReview2 === 'hiding' ? 'review-slide-out ' : ''
+                    } 
+                    ${
+                      showReview2 === true ? 'review-slide-in' : ''
+                    } md:p-4 flex justify-between items-center`}
                   >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.fiver className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
@@ -201,7 +222,13 @@ const ImportReviews: React.FC = () => {
 
                 {showReview3 && (
                   <div
-                    className={`w-full review-slide-in review-slide-out max-w-[280px] review-slide-in csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center`}
+                    onAnimationEnd={() => handleAnimationEnd(3)}
+                    className={`w-full  max-w-[280px] ${
+                      showReview3 === 'hiding' ? 'review-slide-out ' : ''
+                    } 
+                    ${
+                      showReview3 === true ? 'review-slide-in' : ''
+                    } csm:max-w-[440px] md:max-w-[680px] bg-[#F3F5F7] rounded-[10px] p-3 md:p-4 flex justify-between items-center`}
                   >
                     <div className='flex justify-center items-center gap-2 csm:gap-3'>
                       <Icons.google className='w-[30px] csm:w-[48px] h-[30px] csm:h-[48px]' />
