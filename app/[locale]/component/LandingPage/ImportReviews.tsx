@@ -170,6 +170,8 @@ const ImportReviews: React.FC = () => {
                           {t('report')}
                         </p>
                       </button>
+
+                      <p></p>
                     </div>
                   </Zoom>
                 </div>
