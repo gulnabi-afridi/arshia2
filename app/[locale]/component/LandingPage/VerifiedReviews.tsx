@@ -51,7 +51,7 @@ const VerifiedReviews: React.FC = () => {
                 <Image
                   src='/assets/verified.svg'
                   alt=''
-                  className='object-cover csm:object-fill'
+                  className='object-fill '
                   fill
                 />
               </div>

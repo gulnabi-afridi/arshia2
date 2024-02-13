@@ -196,22 +196,22 @@ const ImportReviews: React.FC = () => {
                     </div>
                   </Zoom>
                   {/* arrow icon */}
-                  <div className='absolute -right-[14rem] -top-[10rem]'>
-                    <div className='w-[240px] h-[280px] relative'>
+                  <div className='absolute left-[7rem] csm:left-[18rem] sm:left-[12rem] md:left-auto md:-right-[1rem] cmd:-right-[1rem] celg:-right-[5rem] clg:-right-[10rem] xl:-right-[14rem] -bottom-[5rem] sm:-bottom-[5rem] csm:-bottom-[5rem] csm2:-bottom-[7rem] md:-top-[5rem] celg:-top-[10rem] lg:-top-[2rem] cmd:-top-[5rem] xl:-top-[10rem]'>
+                    <div className='w-[60px] csm2:w-[100px] md:w-[60px] lg:w-[100px] celg:w-[130px] clg:w-[170px] xl:w-[240px] h-[80px] csm2:h-[120px] md:h-[80px] lg:h-[120px] celg:h-[170px] xl:h-[280px] relative'>
                       <Image
                         src='/assets/fillArrow.svg'
                         alt=''
-                        className='object-cover opacity-70'
+                        className='object-cover opacity-70 md:rotate-0 rotate-90'
                         fill
                       />
                       {/* text  */}
-                      <div className='flex justify-center items-center gap-2 absolute top-[5rem] -left-[1rem]'>
-                        <p className='text-[24px] text-[#534599] font-bold '>
+                      <div className='flex justify-center items-center gap-1 lg:gap-2 absolute top-[2rem] md:top-[1rem] lg:top-[2rem] celg:top-[3rem] xl:top-[5rem] -left-[3rem] md:-left-[5rem] celg:-left-[3rem] clg:-left-[2rem] xl:-left-[1rem]'>
+                        <p className='text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold '>
                           Import
                         </p>
                         <p
                           ref={typewriterRef}
-                          className='text-[24px] text-[#534599] font-bold '
+                          className='text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold '
                         ></p>
                       </div>
                     </div>

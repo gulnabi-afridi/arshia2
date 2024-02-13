@@ -17,7 +17,7 @@ const InNutShell: React.FC = () => {
         <div className='flex flex-col gap-6'>
           <Fade duration={1000} triggerOnce>
             <div className='flex justify-center items-center gap-2'>
-              <p className='text-black-2 text-[20px] sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] font-semibold'>
+              <p className='text-black-2 text-[25px] sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] font-semibold'>
                 {t('nut_shell_title')}
               </p>
               <Zoom duration={1000} triggerOnce>

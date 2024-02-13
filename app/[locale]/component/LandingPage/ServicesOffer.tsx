@@ -14,9 +14,9 @@ const ServicesOffer: React.FC = () => {
   return (
     <div className='w-full pb-0 pt-10 csm:pb-10 bg-white-1'>
       <Wrapper>
-        <div className='flex flex-col gap-0 lg:gap-4 w-full justify-center items-center'>
+        <div className='flex flex-col gap-0 lg:gap-4 w-full justify-center items-start sm:items-center'>
           <Fade cascade triggerOnce>
-            <p className='text-[20px] sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] text-black-1 font-semibold'>
+            <p className='text-[22px] whitespace-nowrap sm:text-[25px] csm:text-[30px] md:text-[35px] lg:text-[40px] text-black-1 font-semibold'>
               {t('offer_title')}{' '}
               <span className='uppercase text-[12px] sm:text-[20px] csm:text-[25px] md:text-[30px] lg:text-[35px] text-[#15B1FE] font-rockSalt relative'>
                 {t('convert')}

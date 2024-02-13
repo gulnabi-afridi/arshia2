@@ -133,6 +133,19 @@
   .slick-dots {
     bottom: -36px !important;
   }
+  .tooltip:before {
+    top: -70%;
+    transform: translateY(-50%);
+    width: 120px;
+    padding: 8px;
+    left: -40%;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .tooltip:after {
+    top: -16%;
+    left: 26%;
+  }
 }
 
 @media screen and (max-width: 700px) {

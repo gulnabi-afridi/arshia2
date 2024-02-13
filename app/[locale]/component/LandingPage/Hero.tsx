@@ -16,17 +16,14 @@ const Hero = () => {
         <div className='w-full h-full flex flex-col justify-center items-center gap-3'>
           {/* Image animation */}
           <Slide direction='down' triggerOnce>
-            {/* <div className='w-[300px] h-[180px] relative'>
+            <div className='w-[300px] h-[180px] relative'>
               <Image
                 src='/assets/hero.svg'
                 alt=''
                 fill
                 className='object-fill'
               />
-            </div> */}
-            <h1 className='text-[70px] sm:text-[100px] md:text-[120px] font-bold sm:font-black text-black-2'>
-              Itsolve
-            </h1>
+            </div>
           </Slide>
           {/* Title animation */}
           <Slide direction='up' triggerOnce>
@@ -75,7 +72,7 @@ const Hero = () => {
           </Slide>
         </div>
       </Wrapper>
-      <div className='w-full absolute -bottom-[380px] -z-10'>
+      <div className='w-full absolute -bottom-[400px] sm:-bottom-[380px] -z-10'>
         <Icons.headerShape className='w-full h-[724px]' />
       </div>
     </div>
@@ -86,7 +83,7 @@ const heroLink = [
   {
     path: '#',
     width: 'w-[80px] sm:w-[100px]',
-    height: 'h-[40px]',
+    height: 'h-[38px] sm:h-[40px]',
     img: '/assets/itSolveLogo1.svg',
     tooltip: 'Tooltip 1',
   },
@@ -94,7 +91,7 @@ const heroLink = [
   {
     path: '#',
     width: 'w-[80px] sm:w-[100px]',
-    height: 'h-[36px]',
+    height: 'h-[30px] sm:h-[36px]',
     img: '/assets/itSolveLogo3.png',
     tooltip: 'Tooltip 2',
   },
