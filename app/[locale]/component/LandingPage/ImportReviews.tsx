@@ -8,6 +8,9 @@ import { Fade, Slide, Zoom } from 'react-awesome-reveal';
 import Typewriter from 'typewriter-effect/dist/core';
 import { useTranslation } from 'react-i18next';
 import Spinner from '../Shared/Spinner';
+import { FaCheck } from 'react-icons/fa6';
+import SpinnerWhite from '../Shared/SpinnerWhite';
+import { SparklesCore } from '../Shared/Sparkles';
 
 const ImportReviews: React.FC = () => {
   const { t } = useTranslation();
@@ -21,25 +24,30 @@ const ImportReviews: React.FC = () => {
     2: 'importing',
     3: 'importing',
   });
+  const [beforeImport, setBeforeImport] = useState(true);
 
-  useEffect(() => {
-    if (typewriterRef.current) {
-      new Typewriter(typewriterRef.current, {
-        strings: ['Reviews'],
-        autoStart: true,
-        changeDeleteSpeed: 3,
-        changeDelay: 2,
-        pauseFor: 100,
-        loop: true,
-      });
-    }
-  }, []);
+  //  For Data found
+  const [dataFound, setDataFound] = useState(false);
+
+  // useEffect(() => {
+  //   if (typewriterRef.current) {
+  //     new Typewriter(typewriterRef.current, {
+  //       strings: ["Reviews"],
+  //       autoStart: true,
+  //       changeDeleteSpeed: 3,
+  //       changeDelay: 2,
+  //       pauseFor: 100,
+  //       loop: true,
+  //     });
+  //   }
+  // }, []);
 
   const handleImportClick = () => {
     setImportStatus({ 1: 'importing', 2: 'importing', 3: 'importing' });
 
     setTimeout(() => {
       setShowReview1(true);
+      beforeImport && setBeforeImport(false);
     }, 500);
     setTimeout(
       () => setImportStatus((prev) => ({ ...prev, 1: 'imported' })),
@@ -48,6 +56,7 @@ const ImportReviews: React.FC = () => {
 
     setTimeout(() => {
       setShowReview2(true);
+      beforeImport && setBeforeImport(false);
     }, 1000);
     setTimeout(
       () => setImportStatus((prev) => ({ ...prev, 2: 'imported' })),
@@ -55,6 +64,7 @@ const ImportReviews: React.FC = () => {
     );
 
     setTimeout(() => {
+      beforeImport && setBeforeImport(false);
       setShowReview3(true);
     }, 1500);
     setTimeout(
@@ -70,13 +80,20 @@ const ImportReviews: React.FC = () => {
   const handleAnimationEnd = (reviewNumber: number) => {
     if (reviewNumber === 1 && showReview1 === 'hiding') setShowReview1(false);
     if (reviewNumber === 2 && showReview2 === 'hiding') setShowReview2(false);
-    if (reviewNumber === 3 && showReview3 === 'hiding') setShowReview3(false);
+    if (reviewNumber === 3 && showReview3 === 'hiding') {
+      setShowReview3(false);
+      setDataFound(true);
+
+      setTimeout(() => {
+        setDataFound(false);
+      }, 2000);
+    }
   };
 
   return (
     <div className='w-full py-10 bg-white-1'>
       <Wrapper>
-        <div className='flex flex-col gap-8 w-full justify-center items-center'>
+        <div className='flex flex-col gap-8 w-full justify-center items-center relative'>
           <Fade triggerOnce className='w-full'>
             <div className='flex flex-col gap-2 csm:gap-4 w-full justify-center items-center'>
               <p className='text-[20px] csm:text-[25px] md:text-[30px] lg:text-[40px] text-black-1 font-semibold'>
@@ -173,16 +190,30 @@ const ImportReviews: React.FC = () => {
                           showReview2 === true &&
                           showReview3 === true
                         }
-                        className='buttonScaleAnimation disabled:opacity-50 disabled:cursor-not-allowed flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'
+                        className=' disabled:opacity-50 disabled:cursor-not-allowed flex justify-center bg-[#534599] rounded-md items-center gap-2 px-[18px] hover:opacity-80 py-[8px]'
                       >
-                        <Icons.star className='w-[16px] csm:w-[19px] h-[16px] csm:h-[18px]' />
+                        {beforeImport && (
+                          <Icons.star className='w-[16px] csm:w-[19px] h-[16px] csm:h-[18px]' />
+                        )}
 
-                        <p
-                          // ref={typewriterRef}
-                          className='text-white-1 text-[12px] csm:text-[16px] lg:text-[18px] font-medium'
-                        >
-                          Import
-                        </p>
+                        {beforeImport ? (
+                          <p
+                            // ref={typewriterRef}
+                            className='text-white-1 text-[12px] csm:text-[16px] lg:text-[18px] font-medium'
+                          >
+                            Import
+                          </p>
+                        ) : (
+                          <div className='flex space-x-2 items-center'>
+                            <SpinnerWhite />
+                            <p
+                              // ref={typewriterRef}
+                              className='text-white-1 text-[12px] csm:text-[16px] lg:text-[18px] font-medium'
+                            >
+                              Importing
+                            </p>
+                          </div>
+                        )}
                       </button>
                       {/* report button for small screen  ---->  */}
                       <button className='flex csm:hidden bg-white-1 rounded-md px-[14px] lg:px-[16px] py-[8px] justify-center items-center gap-2'>
@@ -205,14 +236,21 @@ const ImportReviews: React.FC = () => {
                         fill
                       />
                       {/* text  */}
-                      <div className='flex justify-center items-center gap-1 lg:gap-2 absolute top-[2rem] md:top-[1rem] lg:top-[2rem] celg:top-[3rem] xl:top-[5rem] -left-[3rem] md:-left-[5rem] celg:-left-[3rem] clg:-left-[2rem] xl:-left-[1rem]'>
-                        <p className='text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold '>
-                          Import
-                        </p>
-                        <p
-                          ref={typewriterRef}
-                          className='text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold '
-                        ></p>
+                      {/*     CLICK HERE TEXT CHANGED ----------------> */}
+                      <div className='flex  justify-center items-center gap-1 lg:gap-2 absolute top-[2rem] md:top-[1rem] lg:top-[2rem] celg:top-[3rem] xl:top-[5rem] -left-[3rem] md:-left-[5rem] celg:-left-[3rem] clg:-left-[2rem] xl:-left-[1rem]'>
+                        <div className='flex flex-col overflow-x-hidden  w-full'>
+                          <p className='text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold '>
+                            Click Here
+                          </p>
+                          <SparklesCore
+                            background='transparent'
+                            minSize={0.4}
+                            maxSize={1}
+                            particleDensity={1200}
+                            className='w-[65%] h-full'
+                            particleColor='#534599'
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -223,7 +261,10 @@ const ImportReviews: React.FC = () => {
                 {/* upwork review -->  */}
                 {showReview1 && (
                   <div
-                    onAnimationEnd={() => handleAnimationEnd(1)}
+                    onAnimationEnd={() => {
+                      handleAnimationEnd(1);
+                      setBeforeImport(true);
+                    }}
                     className={`w-full max-w-[340px] sm:max-w-[380px] csm:max-w-[480px] md:max-w-[720px] bg-[#F3F5F7] rounded-[10px] p-2 csm:p-3 md:p-4 flex justify-between
                     ${showReview1 === 'hiding' ? 'review-slide-out ' : ''} 
                     ${showReview1 === true ? 'review-slide-in' : ''}
@@ -240,13 +281,19 @@ const ImportReviews: React.FC = () => {
                         <>
                           <Spinner />
                           <p className='text-[14px] csm:text-[18px] text-[#777980] font-medium'>
-                            {t('importing')}...
+                            importing ...
                           </p>
                         </>
                       ) : (
-                        <p className='text-[14px] csm:text-[18px] text-[#534599] font-medium'>
-                          imported
-                        </p>
+                        //   Changed   =========>
+                        <div className='flex space-x-2'>
+                          <Fade delay={1e1} cascade damping={1e-1}>
+                            <FaCheck className='text-green-500 w-[20px] csm:w-[25px] h-[20px] csm:h-[25px]' />
+                          </Fade>
+                          <p className='text-[14px] csm:text-[18px] text-green-500 font-medium'>
+                            imported
+                          </p>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -277,9 +324,14 @@ const ImportReviews: React.FC = () => {
                           </p>
                         </>
                       ) : (
-                        <p className='text-[14px] csm:text-[18px] text-[#534599] font-medium'>
-                          imported
-                        </p>
+                        <div className='flex space-x-2'>
+                          <Fade delay={1e1} cascade damping={1e-1}>
+                            <FaCheck className='text-green-500 w-[20px] csm:w-[25px] h-[20px] csm:h-[25px]' />
+                          </Fade>
+                          <p className='text-[14px] csm:text-[18px] text-green-500 font-medium'>
+                            imported
+                          </p>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -311,14 +363,34 @@ const ImportReviews: React.FC = () => {
                           </p>
                         </>
                       ) : (
-                        <p className='text-[14px] csm:text-[18px] text-[#534599] font-medium'>
-                          imported
-                        </p>
+                        <div className='flex space-x-2'>
+                          <Fade delay={1e1} cascade damping={1e-1}>
+                            <FaCheck className='text-green-500 w-[20px] csm:w-[25px] h-[20px] csm:h-[25px]' />
+                          </Fade>
+                          <p className='text-[14px] csm:text-[18px] text-green-500 font-medium'>
+                            imported
+                          </p>
+                        </div>
                       )}
                     </div>
                   </div>
                 )}
               </div>
+              {dataFound && (
+                <Fade delay={1e1} cascade damping={1e-1}>
+                  <div className='flex flex-col z-10 items-center justify-end  absolute right-14 top-[86px]  -skew-y-12'>
+                    <Image
+                      src={'/assets/tick.svg'}
+                      width={100}
+                      height={100}
+                      alt='tick'
+                    />
+                    <h3 className='font-rockSalt text-[24px] sm:text-[30px] text-[#534599]'>
+                      Details Found
+                    </h3>
+                  </div>
+                </Fade>
+              )}
             </div>
           </Slide>
         </div>

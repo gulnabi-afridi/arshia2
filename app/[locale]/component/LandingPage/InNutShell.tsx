@@ -69,7 +69,7 @@ const InNutShell: React.FC = () => {
                       <Image
                         src='/assets/nutShell2.svg'
                         alt='Descriptive Text for Image'
-                        layout='fill'
+                        fill
                         className='object-cover rounded-xl transition duration-500 ease-in-out transform group-hover:scale-110'
                       />
                       {/* Overlay appears on hover */}
