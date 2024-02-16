@@ -10,9 +10,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
-    "@tsparticles/engine": "^3.2.1",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.2.1",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.5",
     "i18next": "^23.7.18",
@@ -27,6 +24,7 @@
     "react-modern-drawer": "^1.2.2",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.8",
     "tailwind-merge": "^2.2.1",
     "typewriter-effect": "^2.21.0"
   },
